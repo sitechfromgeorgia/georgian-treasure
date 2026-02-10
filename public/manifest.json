@@ -1,10 +1,35 @@
 {
-  "name": "Georgian Treasure",
+  "name": "Georgian Treasure - Batumi Tours",
   "short_name": "G.Treasure",
-  "description": "Premium Batumi Tours & Excursions",
+  "description": "Premium Batumi Tours & Excursions - Discover Adjara",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#001F3F",
   "theme_color": "#001F3F",
-  "icons": []
+  "orientation": "portrait-primary",
+  "categories": ["travel", "tourism"],
+  "lang": "ka",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Book a Tour",
+      "short_name": "Book",
+      "url": "/#booking",
+      "description": "Book a tour in Batumi"
+    }
+  ]
 }

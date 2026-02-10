@@ -6,6 +6,7 @@ import { PopularTours } from '@/components/home/PopularTours';
 import { BookingForm } from '@/components/home/BookingForm';
 import { Contact } from '@/components/home/Contact';
 import { PWAInstallPrompt } from '@/components/ui/PWAInstallPrompt';
+import { ServiceWorkerRegister } from '@/components/ui/ServiceWorkerRegister';
 import { useLanguage } from '@/context/LanguageContext';
 import { MessageCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -68,6 +69,7 @@ export default function Home() {
       <BookingForm />
       <Contact />
       <PWAInstallPrompt />
+      <ServiceWorkerRegister />
 
       {/* Floating WhatsApp */}
       <a 

@@ -1,29 +1,70 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { X, Download, Share } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/context/LanguageContext';
+
+interface BeforeInstallPromptEvent extends Event {
+  prompt: () => Promise<void>;
+  userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>;
+}
 
 export function PWAInstallPrompt() {
   const { t } = useLanguage();
   const [show, setShow] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
+  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
 
   useEffect(() => {
     // Check if already installed
     if (window.matchMedia('(display-mode: standalone)').matches) return;
+    
+    // Check if dismissed recently
+    const dismissed = localStorage.getItem('pwa-dismissed');
+    if (dismissed && Date.now() - parseInt(dismissed) < 7 * 24 * 60 * 60 * 1000) return;
 
     // Check iOS
     const isIosDevice = /iPhone|iPad|iPod/.test(navigator.userAgent);
     setIsIOS(isIosDevice);
 
-    const timer = setTimeout(() => {
+    // Listen for beforeinstallprompt (Android/Desktop Chrome)
+    const handler = (e: Event) => {
+      e.preventDefault();
+      setDeferredPrompt(e as BeforeInstallPromptEvent);
       setShow(true);
-    }, 5000);
+    };
 
-    return () => clearTimeout(timer);
+    window.addEventListener('beforeinstallprompt', handler);
+
+    // For iOS, show after delay (no native install prompt)
+    if (isIosDevice) {
+      const timer = setTimeout(() => setShow(true), 5000);
+      return () => {
+        clearTimeout(timer);
+        window.removeEventListener('beforeinstallprompt', handler);
+      };
+    }
+
+    return () => window.removeEventListener('beforeinstallprompt', handler);
   }, []);
+
+  const handleInstall = useCallback(async () => {
+    if (!deferredPrompt) return;
+    
+    await deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    
+    if (outcome === 'accepted') {
+      setShow(false);
+    }
+    setDeferredPrompt(null);
+  }, [deferredPrompt]);
+
+  const handleDismiss = () => {
+    setShow(false);
+    localStorage.setItem('pwa-dismissed', Date.now().toString());
+  };
 
   if (!show) return null;
 
@@ -39,7 +80,7 @@ export function PWAInstallPrompt() {
           <div className="absolute top-0 left-0 w-1 h-full gold-gradient" />
           
           <button 
-            onClick={() => setShow(false)}
+            onClick={handleDismiss}
             className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:hover:text-white"
           >
             <X size={20} />
@@ -51,23 +92,34 @@ export function PWAInstallPrompt() {
             </div>
             <div>
               <h4 className="font-black text-primary dark:text-white text-lg leading-tight mb-1">
-                {t.pwa.installApp}
+                {t.pwa?.installApp || 'Install App'}
               </h4>
               <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4">
-                {isIOS ? t.pwa.iosInstructions : t.pwa.instructions}
+                {isIOS 
+                  ? (t.pwa?.iosInstructions || 'Tap Share then Add to Home Screen')
+                  : (t.pwa?.instructions || 'Install for faster access!')}
               </p>
               
-              {!isIOS && (
-                <button className="gold-gradient text-primary font-bold px-6 py-2.5 rounded-xl text-sm flex items-center gap-2 shadow-lg hover:scale-105 transition-transform">
+              {!isIOS && deferredPrompt && (
+                <button 
+                  onClick={handleInstall}
+                  className="gold-gradient text-primary font-bold px-6 py-2.5 rounded-xl text-sm flex items-center gap-2 shadow-lg hover:scale-105 transition-transform active:scale-95"
+                >
                   <Download size={16} />
-                  {t.pwa.installNow}
+                  {t.pwa?.installNow || 'Install Now'}
                 </button>
+              )}
+
+              {!isIOS && !deferredPrompt && (
+                <p className="text-xs text-gray-400">
+                  {t.pwa?.browserNotSupported || 'Use Chrome for install option'}
+                </p>
               )}
               
               {isIOS && (
                 <div className="flex items-center gap-2 text-primary dark:text-accent font-bold text-sm">
                   <Share size={18} />
-                  {t.pwa.addToHomeScreen}
+                  {t.pwa?.addToHomeScreen || 'Add to Home Screen'}
                 </div>
               )}
             </div>
