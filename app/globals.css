@@ -1,10 +1,19 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --primary: #001F3F; /* Deep Blue Sea */
   --accent: #D4AF37; /* Gold Treasure */
+}
+
+.dark {
+  --background: #0a0f1a;
+  --foreground: #e5e7eb;
+  --primary: #1a3a5c;
+  --accent: #D4AF37;
 }
 
 @theme {
