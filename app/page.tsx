@@ -76,12 +76,9 @@ export default function Home() {
         href="https://wa.me/995599033319" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center gap-2 group"
+        className="fixed bottom-24 right-6 z-50 bg-[#25D366] text-white p-3.5 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:scale-110 active:scale-95 transition-all group"
       >
-        <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 whitespace-nowrap font-bold">
-          {t.footer.chat}
-        </span>
-        <MessageCircle size={32} fill="white" className="text-[#25D366]" />
+        <MessageCircle size={28} fill="white" className="text-[#25D366]" />
       </a>
 
       <footer className="bg-primary dark:bg-black py-20 text-white/60 border-t border-white/5 transition-colors">
