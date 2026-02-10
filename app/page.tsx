@@ -4,6 +4,7 @@ import { Header } from '@/components/layout/Header';
 import { Hero } from '@/components/home/Hero';
 import { PopularTours } from '@/components/home/PopularTours';
 import { BookingForm } from '@/components/home/BookingForm';
+import { Contact } from '@/components/home/Contact';
 import { PWAInstallPrompt } from '@/components/ui/PWAInstallPrompt';
 import { useLanguage } from '@/context/LanguageContext';
 import { MessageCircle } from 'lucide-react';
@@ -65,6 +66,7 @@ export default function Home() {
       </section>
 
       <BookingForm />
+      <Contact />
       <PWAInstallPrompt />
 
       {/* Floating WhatsApp */}
@@ -85,7 +87,13 @@ export default function Home() {
           <h2 className="text-3xl font-black text-white mb-8 tracking-tighter">GEORGIAN TREASURE</h2>
           <div className="flex justify-center gap-10 mb-12">
             {['Instagram', 'Facebook', 'TripAdvisor'].map((social) => (
-              <a key={social} href="#" className="text-lg hover:text-accent transition-colors relative group">
+              <a 
+                key={social} 
+                href="#" 
+                rel="noopener"
+                className="text-lg hover:text-accent transition-colors relative group opacity-50"
+                title="Coming soon"
+              >
                 {social}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full" />
               </a>

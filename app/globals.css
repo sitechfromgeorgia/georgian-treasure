@@ -11,7 +11,7 @@
   --color-primary: var(--primary);
   --color-accent: var(--accent);
   --font-inter: var(--font-inter);
-  --font-georgian: var(--font-noto-georgian);
+  --font-georgian: var(--font-fira-go);
   --font-arabic: var(--font-noto-arabic);
   --font-hebrew: var(--font-noto-hebrew);
 }

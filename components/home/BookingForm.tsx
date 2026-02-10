@@ -77,7 +77,7 @@ export function BookingForm() {
                 <div className="bg-white/20 p-4 rounded-2xl group-hover:scale-110 transition-transform"><Users className="w-8 h-8" /></div>
                 <div>
                   <p className="font-black text-xl">{labels.discounts[language]}</p>
-                  <p className="text-primary/70">Up to 20% off for 5+ people</p>
+                  <p className="text-primary/70">{t.booking.groupDiscount}</p>
                 </div>
               </div>
             </div>
@@ -93,7 +93,7 @@ export function BookingForm() {
                   required
                   className="w-full bg-white dark:bg-zinc-800 border border-gray-200 dark:border-white/5 rounded-[20px] p-5 focus:ring-4 focus:ring-accent/20 outline-none transition-all dark:text-white"
                 >
-                  <option value="">{isRTL ? 'اختر جولة' : 'Select a tour'}</option>
+                  <option value="">{t.booking.form.selectTour}</option>
                   {tours.map(tour => (
                     <option key={tour.id} value={tour.id}>{tour.title[language]}</option>
                   ))}
@@ -153,7 +153,7 @@ export function BookingForm() {
               <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-gray-200 dark:bg-white/10" />
               <div className="flex items-center gap-2">
                 <MessageSquare size={16} className="text-accent" />
-                No hidden fees
+                {t.booking.noHiddenFees}
               </div>
             </div>
           </form>

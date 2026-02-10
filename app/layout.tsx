@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
-import { Inter, Noto_Sans_Georgian, Noto_Sans_Arabic, Noto_Sans_Hebrew } from "next/font/google";
+import { Inter, Noto_Sans_Arabic, Noto_Sans_Hebrew } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { ThemeProvider } from "@/context/ThemeContext";
 
 const inter = Inter({ subsets: ["latin", "cyrillic"], variable: "--font-inter" });
-const notoGeorgian = Noto_Sans_Georgian({ subsets: ["georgian"], variable: "--font-noto-georgian" });
+const firaGO = localFont({
+  src: [
+    { path: '../public/fonts/FiraGO-Regular.otf', weight: '400', style: 'normal' },
+    { path: '../public/fonts/FiraGO-Medium.otf', weight: '500', style: 'normal' },
+    { path: '../public/fonts/FiraGO-SemiBold.otf', weight: '600', style: 'normal' },
+    { path: '../public/fonts/FiraGO-Bold.otf', weight: '700', style: 'normal' },
+  ],
+  variable: '--font-fira-go',
+  display: 'swap',
+});
 const notoArabic = Noto_Sans_Arabic({ subsets: ["arabic"], variable: "--font-noto-arabic" });
 const notoHebrew = Noto_Sans_Hebrew({ subsets: ["hebrew"], variable: "--font-noto-hebrew" });
 
@@ -83,7 +93,7 @@ export default function RootLayout({
 
   return (
     <html lang="ka" suppressHydrationWarning>
-      <body className={`${inter.variable} ${notoGeorgian.variable} ${notoArabic.variable} ${notoHebrew.variable} font-inter antialiased bg-white dark:bg-zinc-950 transition-colors duration-500`}>
+      <body className={`${inter.variable} ${firaGO.variable} ${notoArabic.variable} ${notoHebrew.variable} font-inter antialiased bg-white dark:bg-zinc-950 transition-colors duration-500`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

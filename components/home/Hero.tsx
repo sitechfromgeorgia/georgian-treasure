@@ -54,16 +54,15 @@ export function Hero() {
             <button className="gold-gradient text-primary font-black px-12 py-5 rounded-full text-lg shadow-[0_0_30px_rgba(212,175,55,0.3)] hover:shadow-[0_0_40px_rgba(212,175,55,0.5)] hover:scale-105 active:scale-95 transition-all">
               {t.hero.cta}
             </button>
-            <button className="glass text-white px-10 py-5 rounded-full text-lg flex items-center gap-3 hover:bg-white/20 transition-all active:scale-95">
+            <a 
+              href="#tours" 
+              className="glass text-white px-10 py-5 rounded-full text-lg flex items-center gap-3 hover:bg-white/20 transition-all active:scale-95"
+            >
               <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
                 <Play size={16} className="text-primary ml-0.5" fill="currentColor" />
               </div>
-              {language === 'ka' ? 'ვიდეოს ნახვა' : 
-               language === 'ru' ? 'Смотреть видео' :
-               language === 'uk' ? 'Дивитися відео' :
-               language === 'ar' ? 'شاهد الفيديو' :
-               language === 'he' ? 'צפה בווידאו' : 'Watch Video'}
-            </button>
+              {t.hero.watchVideo}
+            </a>
           </motion.div>
         </motion.div>
       </div>

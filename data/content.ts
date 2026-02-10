@@ -14,7 +14,7 @@ export const tours: Tour[] = [
     description: {
       ka: 'აღმოაჩინეთ ბათუმის ისტორია და თანამედროვეობა ერთ დღეში.',
       en: 'Discover Batumi\'s history and modernity in one day.',
-      ru: 'Откройте для себя историю и современность Батуმი за один день.',
+      ru: 'Откройте для себя историю и современность Батуми за один день.',
       uk: 'Відкрийте для себе історію та сучасність Батумі за один день.',
       ar: 'اكتشف تاريخ وحداثة باتومي في يوم واحد.',
       he: 'גלה את ההיסטוריה והמודרניות של בטומי ביום אחד.'
@@ -32,7 +32,7 @@ export const tours: Tour[] = [
       ka: 'მთიანი აჭარა',
       en: 'Mountainous Adjara',
       ru: 'Горная Аджария',
-      uk: 'Гіრська Аджарія',
+      uk: 'Гірська Аджарія',
       ar: 'أجاريا الجبلية',
       he: 'אג\'ארה ההררית'
     },
@@ -58,7 +58,8 @@ export const translations: Record<Language, any> = {
     hero: {
       title: 'აღმოაჩინე ბათუმის საგანძური',
       subtitle: 'ექსკლუზიური ტურები და დაუვიწყარი თავგადასავლები აჭარაში',
-      cta: 'დაჯავშნე ახლავე'
+      cta: 'დაჯავშნე ახლავე',
+      watchVideo: 'ვიდეოს ნახვა'
     },
     nav: {
       tours: 'ტურები',
@@ -88,8 +89,24 @@ export const translations: Record<Language, any> = {
         people: 'ადამიანების რაოდენობა',
         date: 'თარიღი',
         tour: 'აირჩიეთ ტური',
-        submit: 'დაჯავშნა WhatsApp-ით'
-      }
+        submit: 'დაჯავშნა WhatsApp-ით',
+        selectTour: 'აირჩიეთ ტური'
+      },
+      noHiddenFees: 'ფარული ხარჯების გარეშე',
+      groupDiscount: '5+ ადამიანისთვის 20%-მდე ფასდაკლება'
+    },
+    pwa: {
+      installApp: 'დააინსტალირე აპი',
+      installNow: 'ახლავე დააინსტალირე',
+      iosInstructions: 'დააჭირე "გაზიარება" და შემდეგ "Add to Home Screen" რომ დააინსტალირო Georgian Treasure აპი.',
+      instructions: 'დააინსტალირე ჩვენი აპი სწრაფი წვდომისთვის და ბათუმში ოფლაინ დაჯავშნებისთვის!',
+      addToHomeScreen: 'დაამატე მთავარ ეკრანზე'
+    },
+    contact: {
+      title: 'დაგვიკავშირდით',
+      phone: 'ტელეფონი / WhatsApp',
+      address: 'მისამართი',
+      addressValue: 'ბათუმი, აჭარა, საქართველო'
     },
     footer: {
       allRights: 'ყველა უფლება დაცულია.',
@@ -100,7 +117,8 @@ export const translations: Record<Language, any> = {
     hero: {
       title: 'Discover Georgian Treasure',
       subtitle: 'Exclusive tours and unforgettable adventures in Adjara',
-      cta: 'Book Now'
+      cta: 'Book Now',
+      watchVideo: 'Watch Video'
     },
     nav: {
       tours: 'Tours',
@@ -130,8 +148,24 @@ export const translations: Record<Language, any> = {
         people: 'Number of People',
         date: 'Date',
         tour: 'Select Tour',
-        submit: 'Book via WhatsApp'
-      }
+        submit: 'Book via WhatsApp',
+        selectTour: 'Select a tour'
+      },
+      noHiddenFees: 'No hidden fees',
+      groupDiscount: 'Up to 20% off for 5+ people'
+    },
+    pwa: {
+      installApp: 'Install App',
+      installNow: 'Install Now',
+      iosInstructions: 'Tap "Share" and then "Add to Home Screen" to install Georgian Treasure app.',
+      instructions: 'Install our app for faster access and offline bookings in Batumi!',
+      addToHomeScreen: 'Add to Home Screen'
+    },
+    contact: {
+      title: 'Contact Us',
+      phone: 'Phone / WhatsApp',
+      address: 'Address',
+      addressValue: 'Batumi, Adjara, Georgia'
     },
     footer: {
       allRights: 'All rights reserved.',
@@ -142,7 +176,8 @@ export const translations: Record<Language, any> = {
     hero: {
       title: 'Откройте для себя сокровища Грузии',
       subtitle: 'Эксклюзивные туры и незабываемые приключения в Аджарии',
-      cta: 'Забронировать сейчас'
+      cta: 'Забронировать сейчас',
+      watchVideo: 'Смотреть видео'
     },
     nav: {
       tours: 'Туры',
@@ -172,8 +207,24 @@ export const translations: Record<Language, any> = {
         people: 'Количество человек',
         date: 'Дата',
         tour: 'Выберите тур',
-        submit: 'Забронировать через WhatsApp'
-      }
+        submit: 'Забронировать через WhatsApp',
+        selectTour: 'Выберите тур'
+      },
+      noHiddenFees: 'Без скрытых комиссий',
+      groupDiscount: 'Скидка до 20% для 5+ человек'
+    },
+    pwa: {
+      installApp: 'Установить приложение',
+      installNow: 'Установить сейчас',
+      iosInstructions: 'Нажмите "Поделиться", затем "На экран Домой", чтобы установить приложение Georgian Treasure.',
+      instructions: 'Установите наше приложение для быстрого доступа и оффлайн-бронирования в Батуми!',
+      addToHomeScreen: 'На экран Домой'
+    },
+    contact: {
+      title: 'Свяжитесь с нами',
+      phone: 'Телефон / WhatsApp',
+      address: 'Адрес',
+      addressValue: 'Батуми, Аджария, Грузия'
     },
     footer: {
       allRights: 'Все права защищены.',
@@ -184,7 +235,8 @@ export const translations: Record<Language, any> = {
     hero: {
       title: 'Відкрийте для себе скарби Грузії',
       subtitle: 'Ексклюзивні тури та незабутні пригоди в Аджарії',
-      cta: 'Забронювати зараз'
+      cta: 'Забронювати зараз',
+      watchVideo: 'Дивитися відео'
     },
     nav: {
       tours: 'Тури',
@@ -214,8 +266,24 @@ export const translations: Record<Language, any> = {
         people: 'Кількість осіб',
         date: 'Дата',
         tour: 'Оберіть тур',
-        submit: 'Забронювати через WhatsApp'
-      }
+        submit: 'Забронювати через WhatsApp',
+        selectTour: 'Оберіть тур'
+      },
+      noHiddenFees: 'Без прихованих комісій',
+      groupDiscount: 'Знижка до 20% для 5+ осіб'
+    },
+    pwa: {
+      installApp: 'Встановити додаток',
+      installNow: 'Встановити зараз',
+      iosInstructions: 'Натисніть "Поділитися", потім "На головний екран", щоб встановити додаток Georgian Treasure.',
+      instructions: 'Встановіть наш додаток для швидкого доступу та офлайн-бронювання в Батумі!',
+      addToHomeScreen: 'На головний екран'
+    },
+    contact: {
+      title: 'Зв\'яжіться з нами',
+      phone: 'Телефон / WhatsApp',
+      address: 'Адреса',
+      addressValue: 'Батумі, Аджарія, Грузія'
     },
     footer: {
       allRights: 'Всі права захищені.',
@@ -226,7 +294,8 @@ export const translations: Record<Language, any> = {
     hero: {
       title: 'اكتشف الكنز الجورجي',
       subtitle: 'جولات حصرية ومغامرات لا تنسى في أجاريا',
-      cta: 'احجز الآن'
+      cta: 'احجز الآن',
+      watchVideo: 'شاهد الفيديو'
     },
     nav: {
       tours: 'جولات',
@@ -256,8 +325,24 @@ export const translations: Record<Language, any> = {
         people: 'عدد الأشخاص',
         date: 'التاريخ',
         tour: 'اختر الجولة',
-        submit: 'احجز عبر الواتساب'
-      }
+        submit: 'احجز عبر الواتساب',
+        selectTour: 'اختر جولة'
+      },
+      noHiddenFees: 'لا توجد رسوم خفية',
+      groupDiscount: 'خصم يصل إلى 20% لـ 5+ أشخاص'
+    },
+    pwa: {
+      installApp: 'تثبيت التطبيق',
+      installNow: 'ثبت الآن',
+      iosInstructions: 'انقر على "مشاركة" ثم "أضف إلى الشاشة الرئيسية" لتثبيت تطبيق Georgian Treasure.',
+      instructions: 'قم بتثبيت تطبيقنا للوصول السريع والحجز دون اتصال في باتومي!',
+      addToHomeScreen: 'أضف إلى الشاشة الرئيسية'
+    },
+    contact: {
+      title: 'اتصل بنا',
+      phone: 'الهاتف / واتساب',
+      address: 'العنوان',
+      addressValue: 'باتومي، أجاريا، جورجيا'
     },
     footer: {
       allRights: 'كل الحقوق محفوظة.',
@@ -268,7 +353,8 @@ export const translations: Record<Language, any> = {
     hero: {
       title: 'גלו את האוצר הגיאורגי',
       subtitle: 'סיורים בלעדיים והרפתקאות בלתי נשכחות באג\'ארה',
-      cta: 'הזמן עכשיו'
+      cta: 'הזמן עכשיו',
+      watchVideo: 'צפה בווידאו'
     },
     nav: {
       tours: 'סיורים',
@@ -277,7 +363,7 @@ export const translations: Record<Language, any> = {
       contact: 'צור קשר'
     },
     sections: {
-      popularTours: 'סיורים פოპולריים',
+      popularTours: 'סיורים פופולריים',
       whyUs: 'למה אנחנו?',
       howToBook: 'איך להזמין',
       testimonials: 'המלצות',
@@ -298,8 +384,24 @@ export const translations: Record<Language, any> = {
         people: 'מספר אנשים',
         date: 'תאריך',
         tour: 'בחר סיור',
-        submit: 'הזמן בוואטსაპ'
-      }
+        submit: 'הזמן בוואטסאפ',
+        selectTour: 'בחר סיור'
+      },
+      noHiddenFees: 'ללא עמלות נסתרות',
+      groupDiscount: 'עד 20% הנחה ל-5+ אנשים'
+    },
+    pwa: {
+      installApp: 'התקן אפליקציה',
+      installNow: 'התקן עכשיו',
+      iosInstructions: 'לחץ על "שתף" ואז "הוסף למסך הבית" כדי להתקין את אפליקציית Georgian Treasure.',
+      instructions: 'התקן את האפליקציה שלנו לגישה מהירה יותר והזמנות לא מקוונות בבטומי!',
+      addToHomeScreen: 'הוסף למסך הבית'
+    },
+    contact: {
+      title: 'צור קשר',
+      phone: 'טלפון / WhatsApp',
+      address: 'כתובת',
+      addressValue: 'בטומי, אג\'ארה, גיאורגיה'
     },
     footer: {
       allRights: 'כל הזכויות שמורות.',

@@ -3,8 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import { X, Download, Share } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 
 export function PWAInstallPrompt() {
+  const { t } = useLanguage();
   const [show, setShow] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
 
@@ -49,25 +51,23 @@ export function PWAInstallPrompt() {
             </div>
             <div>
               <h4 className="font-black text-primary dark:text-white text-lg leading-tight mb-1">
-                Install App
+                {t.pwa.installApp}
               </h4>
               <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4">
-                {isIOS 
-                  ? 'Tap "Share" and then "Add to Home Screen" to install Georgian Treasure app.'
-                  : 'Install our app for faster access and offline bookings in Batumi!'}
+                {isIOS ? t.pwa.iosInstructions : t.pwa.instructions}
               </p>
               
               {!isIOS && (
                 <button className="gold-gradient text-primary font-bold px-6 py-2.5 rounded-xl text-sm flex items-center gap-2 shadow-lg hover:scale-105 transition-transform">
                   <Download size={16} />
-                  Install Now
+                  {t.pwa.installNow}
                 </button>
               )}
               
               {isIOS && (
                 <div className="flex items-center gap-2 text-primary dark:text-accent font-bold text-sm">
                   <Share size={18} />
-                  Add to Home Screen
+                  {t.pwa.addToHomeScreen}
                 </div>
               )}
             </div>
