@@ -22,7 +22,7 @@ export default function Home() {
       <PopularTours />
       
       {/* About Us Section */}
-      <section id="about" className="py-24 bg-gray-50 dark:bg-zinc-950 overflow-hidden transition-colors">
+      <section id="about" className="py-24 bg-gray-50 dark:bg-zinc-950 overflow-hidden transition-colors duration-500">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <motion.div 
@@ -81,7 +81,7 @@ export default function Home() {
         <MessageCircle size={28} fill="white" className="text-[#25D366]" />
       </a>
 
-      <footer className="bg-primary dark:bg-black py-20 text-white/60 border-t border-white/5 transition-colors">
+      <footer className="bg-primary dark:bg-black py-20 text-white/60 border-t border-white/5 transition-colors duration-500">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-black text-white mb-8 tracking-tighter">GEORGIAN TREASURE</h2>
           <div className="flex justify-center gap-10 mb-12">

@@ -45,7 +45,7 @@ export function Hero() {
       ))}
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/60 via-primary/30 to-primary/90 dark:from-black/80 dark:via-black/40 dark:to-zinc-950" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-black/60 via-primary/30 to-primary/90 dark:from-black/80 dark:via-black/40 dark:to-zinc-950 transition-colors duration-500" />
 
       {/* Animated Particles / Bokeh */}
       <div className="absolute inset-0 z-[2] overflow-hidden pointer-events-none">

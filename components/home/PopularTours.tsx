@@ -125,7 +125,7 @@ export function PopularTours() {
         </div>
         
         <div className="mt-20 text-center">
-          <button className="text-white border border-white/10 px-12 py-4 rounded-full font-bold hover:bg-white hover:text-primary hover:border-white transition-all shadow-xl active:scale-95">
+          <button className="text-white border border-white/10 px-12 py-4 rounded-full font-bold hover:bg-white hover:text-primary hover:border-white transition-all duration-300 shadow-xl active:scale-95">
             {labels.viewAll[language]}
           </button>
         </div>

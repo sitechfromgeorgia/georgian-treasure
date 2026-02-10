@@ -34,7 +34,7 @@ export function Contact() {
               initial={{ opacity: 0, x: isRTL ? 50 : -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="group bg-gray-50 dark:bg-zinc-900 p-10 rounded-[40px] border border-gray-100 dark:border-white/5 hover:border-accent/30 transition-all hover:-translate-y-2 shadow-xl"
+              className="group bg-gray-50 dark:bg-zinc-900 p-10 rounded-[40px] border border-gray-100 dark:border-white/5 hover:border-accent/30 transition-all duration-300 hover:-translate-y-2 shadow-xl"
             >
               <div className="w-16 h-16 rounded-2xl gold-gradient mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <Phone size={32} className="text-primary" />
@@ -51,7 +51,7 @@ export function Contact() {
               initial={{ opacity: 0, x: isRTL ? -50 : 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="group bg-gray-50 dark:bg-zinc-900 p-10 rounded-[40px] border border-gray-100 dark:border-white/5 hover:border-accent/30 transition-all hover:-translate-y-2 shadow-xl"
+              className="group bg-gray-50 dark:bg-zinc-900 p-10 rounded-[40px] border border-gray-100 dark:border-white/5 hover:border-accent/30 transition-all duration-300 hover:-translate-y-2 shadow-xl"
             >
               <div className="w-16 h-16 rounded-2xl gold-gradient mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <MapPin size={32} className="text-primary" />

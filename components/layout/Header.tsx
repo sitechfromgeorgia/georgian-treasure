@@ -118,7 +118,7 @@ export function Header() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden glass-dark absolute top-full left-0 right-0 border-t border-white/10 animate-in fade-in slide-in-from-top-4 duration-300">
+        <div className="md:hidden glass-dark absolute top-full left-0 right-0 border-t border-white/10 animate-in fade-in slide-in-from-top-4 duration-300 shadow-2xl">
           <nav className="flex flex-col p-6 gap-6">
             {navLinks.map((link) => (
               <Link 
