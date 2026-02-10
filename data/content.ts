@@ -23,7 +23,7 @@ export const tours: Tour[] = [
     priceUSD: 20,
     duration: { ka: '4 საათი', en: '4 hours', ru: '4 часа', uk: '4 години', ar: '4 ساعات', he: '4 שעות' },
     difficulty: 'Easy',
-    image: 'https://images.unsplash.com/photo-1561350111-7dad4b28dfb1?q=80&w=2070&auto=format&fit=crop',
+    image: '/images/batumi/night-skyline.jpg',
     category: 'day'
   },
   {
@@ -48,7 +48,7 @@ export const tours: Tour[] = [
     priceUSD: 30,
     duration: { ka: '7 საათი', en: '7 hours', ru: '7 часов', uk: '7 годин', ar: '7 ساعات', he: '7 שעות' },
     difficulty: 'Medium',
-    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop',
+    image: '/images/batumi/green-cityscape.jpg',
     category: 'day'
   }
 ];

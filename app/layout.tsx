@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Georgian Treasure",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1563220318-7b447883296c?q=80&w=1200&auto=format&fit=crop",
+        url: "/images/batumi/night-beach.jpg",
         width: 1200,
         height: 630,
         alt: "Batumi, Georgia",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Georgian Treasure - Batumi Tours & Excursions",
     description: "Premium tour service in Batumi, Georgia. Discover the beauty of Adjara with professional guides.",
-    images: ["https://images.unsplash.com/photo-1563220318-7b447883296c?q=80&w=1200&auto=format&fit=crop"],
+    images: ["/images/batumi/night-beach.jpg"],
   },
   keywords: ["Batumi tours", "Adjara excursions", "Georgia tour guide", "Batumi sightseeing", "private tours Batumi", "ბათუმის ტურები", "აჭარის ექსკურსიები"],
 };

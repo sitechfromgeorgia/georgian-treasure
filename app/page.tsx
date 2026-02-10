@@ -33,7 +33,7 @@ export default function Home() {
             >
               <div className="absolute -top-10 -left-10 w-40 h-40 gold-gradient rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob" />
               <img 
-                src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop" 
+                src="/images/batumi/lake-tower.jpg" 
                 alt="Batumi View" 
                 className="rounded-[40px] shadow-2xl relative z-10 grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
               />

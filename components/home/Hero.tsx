@@ -14,7 +14,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/70 via-primary/40 to-primary dark:from-black/80 dark:via-black/50 dark:to-zinc-950 z-10 transition-colors duration-500" />
         <img 
-          src="https://images.unsplash.com/photo-1563220318-7b447883296c?q=80&w=2070&auto=format&fit=crop" 
+          src="/images/batumi/aerial-coastline.jpg" 
           alt="Batumi" 
           className="w-full h-full object-cover scale-105 animate-pulse-slow"
         />
