@@ -34,7 +34,7 @@ export function BookingForm() {
     const tourTitle = selectedTour ? selectedTour.title[language] : formData.tour;
     const message = `*New Booking Request*%0A%0A*Tour:* ${tourTitle}%0A*Date:* ${formData.date}%0A*People:* ${formData.people}%0A*Client:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Language:* ${formData.lang}`;
     
-    window.open(`https://wa.me/995593123456?text=${message}`, '_blank');
+    window.open(`https://wa.me/995599033319?text=${message}`, '_blank');
   };
 
   const labels = {

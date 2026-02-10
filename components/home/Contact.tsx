@@ -28,7 +28,7 @@ export function Contact() {
 
           <div className="grid md:grid-cols-2 gap-8">
             <motion.a
-              href="https://wa.me/995593123456"
+              href="https://wa.me/995599033319"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, x: isRTL ? 50 : -50 }}
@@ -43,7 +43,7 @@ export function Contact() {
                 {t.contact.phone}
               </h3>
               <p className="text-2xl font-black text-accent tracking-tight">
-                +995 593 123 456
+                +995 599 033 319
               </p>
             </motion.a>
 

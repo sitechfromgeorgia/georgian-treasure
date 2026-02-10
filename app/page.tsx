@@ -71,7 +71,7 @@ export default function Home() {
 
       {/* Floating WhatsApp */}
       <a 
-        href="https://wa.me/995593123456" 
+        href="https://wa.me/995599033319" 
         target="_blank" 
         rel="noopener noreferrer"
         className="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center gap-2 group"

@@ -61,7 +61,7 @@ export default function RootLayout({
     "image": "https://georgiantreasure.ge/logo.png",
     "@id": "https://georgiantreasure.ge",
     "url": "https://georgiantreasure.ge",
-    "telephone": "+995593123456",
+    "telephone": "+995599033319",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Batumi City Center",
