@@ -25,10 +25,10 @@ export default function AdminDashboard() {
   }, []);
 
   const stats = [
-    { label: 'Total Bookings', value: bookings.length + 128, icon: <Calendar />, color: 'bg-blue-500' },
-    { label: 'Total Revenue', value: '$4,250', icon: <DollarSign />, color: 'bg-green-500' },
-    { label: 'Popular Tour', value: 'Mountainous Adjara', icon: <TrendingUp />, color: 'bg-purple-500' },
-    { label: 'New Inquiries', value: '12', icon: <Users />, color: 'bg-orange-500' },
+    { label: 'Total Bookings', value: bookings.length + 128, icon: Calendar, color: 'bg-blue-500' },
+    { label: 'Total Revenue', value: '$4,250', icon: DollarSign, color: 'bg-green-500' },
+    { label: 'Popular Tour', value: 'Mountainous Adjara', icon: TrendingUp, color: 'bg-purple-500' },
+    { label: 'New Inquiries', value: '12', icon: Users, color: 'bg-orange-500' },
   ];
 
   return (
@@ -89,7 +89,7 @@ export default function AdminDashboard() {
           {stats.map((stat, idx) => (
             <div key={idx} className="bg-white dark:bg-zinc-900 p-8 rounded-[32px] shadow-sm border border-gray-100 dark:border-white/5 group hover:border-accent/20 transition-all">
               <div className={cn("w-14 h-14 rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg group-hover:scale-110 transition-transform", stat.color)}>
-                {React.cloneElement(stat.icon as React.ReactElement, { size: 28 })}
+                <stat.icon size={28} />
               </div>
               <p className="text-gray-500 dark:text-white/40 text-xs font-black uppercase tracking-widest">{stat.label}</p>
               <h4 className="text-3xl font-black text-primary dark:text-white mt-2 tracking-tighter">{stat.value}</h4>
