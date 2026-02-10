@@ -1,65 +1,101 @@
-import Image from "next/image";
+'use client';
+
+import { Header } from '@/components/layout/Header';
+import { Hero } from '@/components/home/Hero';
+import { PopularTours } from '@/components/home/PopularTours';
+import { BookingForm } from '@/components/home/BookingForm';
+import { PWAInstallPrompt } from '@/components/ui/PWAInstallPrompt';
+import { useLanguage } from '@/context/LanguageContext';
+import { MessageCircle } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 
 export default function Home() {
+  const { isRTL, t } = useLanguage();
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main className={cn("min-h-screen transition-colors duration-500", isRTL ? "font-arabic" : "font-inter")}>
+      <Header />
+      <Hero />
+      <PopularTours />
+      
+      {/* About Us Section */}
+      <section id="about" className="py-24 bg-gray-50 dark:bg-zinc-950 overflow-hidden transition-colors">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <motion.div 
+              initial={{ opacity: 0, x: isRTL ? 50 : -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:w-1/2 relative"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              <div className="absolute -top-10 -left-10 w-40 h-40 gold-gradient rounded-full mix-blend-multiply filter blur-2xl opacity-30 animate-blob" />
+              <img 
+                src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070&auto=format&fit=crop" 
+                alt="Batumi View" 
+                className="rounded-[40px] shadow-2xl relative z-10 grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
+              />
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, x: isRTL ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:w-1/2"
             >
-              Learning
-            </a>{" "}
-            center.
+              <h2 className="text-4xl md:text-5xl font-black text-primary dark:text-white mb-8">
+                {t.about.title}
+              </h2>
+              <div className="space-y-8">
+                {t.about.features.map((item: any, idx: number) => (
+                  <div key={idx} className="flex gap-6 group">
+                    <div className="w-14 h-14 rounded-2xl gold-gradient flex-shrink-0 flex items-center justify-center font-bold text-primary shadow-lg group-hover:scale-110 transition-transform">
+                      {idx + 1}
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-primary dark:text-white mb-2">{item.title}</h4>
+                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <BookingForm />
+      <PWAInstallPrompt />
+
+      {/* Floating WhatsApp */}
+      <a 
+        href="https://wa.me/995593123456" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all flex items-center gap-2 group"
+      >
+        <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 whitespace-nowrap font-bold">
+          {t.footer.chat}
+        </span>
+        <MessageCircle size={32} fill="white" className="text-[#25D366]" />
+      </a>
+
+      <footer className="bg-primary dark:bg-black py-20 text-white/60 border-t border-white/5 transition-colors">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-black text-white mb-8 tracking-tighter">GEORGIAN TREASURE</h2>
+          <div className="flex justify-center gap-10 mb-12">
+            {['Instagram', 'Facebook', 'TripAdvisor'].map((social) => (
+              <a key={social} href="#" className="text-lg hover:text-accent transition-colors relative group">
+                {social}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full" />
+              </a>
+            ))}
+          </div>
+          <p className="border-t border-white/5 pt-10 text-sm">
+            © {new Date().getFullYear()} Georgian Treasure. Batumi, Adjara. {t.footer.allRights}
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </footer>
+    </main>
   );
 }
