@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Noto_Sans_Arabic, Noto_Sans_Hebrew, Noto_Sans_Georgian } from 'next/font/google';
+import { Inter, Noto_Sans_Hebrew, Noto_Sans_Georgian } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { ThemeProvider } from '@/context/ThemeContext';
@@ -17,12 +17,6 @@ const notoGeorgian = Noto_Sans_Georgian({
   subsets: ['georgian'],
   variable: '--font-noto-georgian',
   weight: ['400', '700'],
-  display: 'swap',
-});
-
-const notoArabic = Noto_Sans_Arabic({
-  subsets: ['arabic'],
-  variable: '--font-noto-arabic',
   display: 'swap',
 });
 
@@ -47,8 +41,6 @@ export const metadata: Metadata = {
       'en': '/en',
       'ka': '/ka',
       'ru': '/ru',
-      'uk': '/uk',
-      'ar': '/ar',
       'he': '/he',
     },
   },
@@ -142,7 +134,7 @@ export default function RootLayout({
         <meta name="ICBM" content="41.6168, 41.6367" />
       </head>
       <body
-        className={`${inter.variable} ${notoGeorgian.variable} ${notoArabic.variable} ${notoHebrew.variable} font-inter antialiased bg-white dark:bg-zinc-950 transition-colors duration-500`}
+        className={`${inter.variable} ${notoGeorgian.variable} ${notoHebrew.variable} font-inter antialiased bg-white dark:bg-zinc-950 transition-colors duration-500`}
       >
         <LanguageProvider>
           <ThemeProvider>

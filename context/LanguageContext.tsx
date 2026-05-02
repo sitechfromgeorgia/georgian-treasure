@@ -14,23 +14,31 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('ka');
+  const [language, setLanguageState] = useState<Language>('en');
   const [isRTL, setIsRTL] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem('language') as Language;
-    if (saved && languages[saved]) {
-      setLanguageState(saved);
-      setIsRTL(languages[saved].rtl);
-      document.documentElement.dir = languages[saved].rtl ? 'rtl' : 'ltr';
-      document.documentElement.lang = saved;
+    try {
+      const saved = localStorage.getItem('language') as Language;
+      if (saved && languages[saved]) {
+        setLanguageState(saved);
+        setIsRTL(languages[saved].rtl);
+        document.documentElement.dir = languages[saved].rtl ? 'rtl' : 'ltr';
+        document.documentElement.lang = saved;
+      }
+    } catch {
+      // localStorage unavailable (e.g. private browsing)
     }
   }, []);
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
     setIsRTL(languages[lang].rtl);
-    localStorage.setItem('language', lang);
+    try {
+      localStorage.setItem('language', lang);
+    } catch {
+      // localStorage unavailable
+    }
     document.documentElement.dir = languages[lang].rtl ? 'rtl' : 'ltr';
     document.documentElement.lang = lang;
   };

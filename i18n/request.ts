@@ -1,19 +1,15 @@
 import { getRequestConfig } from 'next-intl/server';
 import { hasLocale } from 'next-intl';
-import kaMessages from '../messages/ka.json';
 import enMessages from '../messages/en.json';
+import kaMessages from '../messages/ka.json';
 import ruMessages from '../messages/ru.json';
-import trMessages from '../messages/tr.json';
-import deMessages from '../messages/de.json';
 import heMessages from '../messages/he.json';
 import { locales, defaultLocale, type Locale } from './config';
 
 const messagesMap: Record<Locale, any> = {
-  ka: kaMessages,
   en: enMessages,
+  ka: kaMessages,
   ru: ruMessages,
-  tr: trMessages,
-  de: deMessages,
   he: heMessages,
 };
 

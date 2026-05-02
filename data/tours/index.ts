@@ -1,1 +1,1 @@
-export const SUPPORTED_LOCALES = ['ka', 'en', 'ru', 'uk', 'ar', 'he'];
+export const SUPPORTED_LOCALES = ['en', 'ka', 'ru', 'he'];

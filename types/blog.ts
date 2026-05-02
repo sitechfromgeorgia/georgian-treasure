@@ -1,4 +1,4 @@
-export type BlogLanguage = 'ka' | 'en' | 'ru';
+export type BlogLanguage = 'en' | 'ka' | 'ru' | 'he';
 
 export interface BlogPostTranslation {
   title: string;
