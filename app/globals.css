@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #001F3F; /* Deep Blue Sea */
+  --accent: #D4AF37; /* Gold Treasure */
+}
+
+.dark {
+  --background: #0a0f1a;
+  --foreground: #e5e7eb;
+  --primary: #1a3a5c;
+  --accent: #D4AF37;
+}
+
+@theme {
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --font-inter: var(--font-inter);
+  --font-georgian: var(--font-noto-georgian);
+  --font-arabic: var(--font-noto-arabic);
+  --font-hebrew: var(--font-noto-hebrew);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Font cascade by language — overrides Tailwind font-* classes */
+[lang="ka"] body,
+[lang="ka"] main,
+[lang="ka"] * {
+  font-family: var(--font-noto-georgian), sans-serif !important;
+}
+
+[lang="ar"] body,
+[lang="ar"] main,
+[lang="ar"] * {
+  font-family: var(--font-noto-arabic), sans-serif !important;
+}
+
+[lang="he"] body,
+[lang="he"] main,
+[lang="he"] * {
+  font-family: var(--font-noto-hebrew), sans-serif !important;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(0, 31, 63, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #F9E272 50%, #B8860B 100%);
+}
+
+.text-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #F9E272 50%, #B8860B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes kenburns {
+  0% { transform: scale(1.05); }
+  100% { transform: scale(1.15); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+  25% { transform: translateY(-30px) translateX(15px); opacity: 0.6; }
+  50% { transform: translateY(-15px) translateX(-10px); opacity: 0.4; }
+  75% { transform: translateY(-40px) translateX(20px); opacity: 0.5; }
+}
+
+.animate-float {
+  animation: float 10s ease-in-out infinite;
+}

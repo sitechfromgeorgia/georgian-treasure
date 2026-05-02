@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "title": "Georgian Treasure - Batumi Tours & Excursions",
+    "description": "Premium tours in Batumi. Discover the beauty of Adjara with professional guides."
+  },
+  "nav": {
+    "tours": "Tours",
+    "about": "About Us",
+    "booking": "Booking",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "hero": {
+    "title": "Discover Georgia's Hidden Treasures",
+    "subtitle": "Exclusive tours and unforgettable adventures in Adjara",
+    "cta": "Book Now",
+    "watchVideo": "Watch Video"
+  },
+  "sections": {
+    "popularTours": "Popular Tours",
+    "whyUs": "Why Choose Us?",
+    "howToBook": "How to Book",
+    "testimonials": "What Travelers Say",
+    "faq": "FAQ",
+    "regions": "Regions"
+  },
+  "about": {
+    "title": "Why Georgian Treasure?",
+    "features": [
+      {
+        "title": "Expert Local Guides",
+        "desc": "Our guides speak 6 languages and know every secret corner of Batumi."
+      },
+      {
+        "title": "Personalized Experience",
+        "desc": "Private VIP tours or group adventures tailored to your rhythm."
+      },
+      {
+        "title": "Best Price Guarantee",
+        "desc": "Premium service at competitive local prices. No hidden fees."
+      }
+    ]
+  },
+  "booking": {
+    "title": "Book a Tour",
+    "form": {
+      "name": "Your Name",
+      "people": "Number of People",
+      "date": "Date",
+      "tour": "Select Tour",
+      "submit": "Book via WhatsApp",
+      "selectTour": "Select a tour"
+    },
+    "noHiddenFees": "No hidden fees",
+    "groupDiscount": "Up to 20% discount for 5+ people"
+  },
+  "tours": {
+    "filters": {
+      "search": "Search tours...",
+      "region": "Region",
+      "category": "Category",
+      "duration": "Duration",
+      "price": "Price",
+      "difficulty": "Difficulty",
+      "season": "Season",
+      "sort": "Sort by"
+    },
+    "tourCard": {
+      "from": "From",
+      "perPerson": "per person",
+      "bookNow": "Book Now",
+      "duration": "Duration",
+      "difficulty": "Difficulty"
+    }
+  },
+  "pwa": {
+    "installApp": "Install App",
+    "installNow": "Install Now",
+    "iosInstructions": "Tap \"Share\" then \"Add to Home Screen\" to install the Georgian Treasure app.",
+    "instructions": "Install our app for quick access and offline booking in Batumi!",
+    "addToHomeScreen": "Add to Home Screen"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "phone": "Phone / WhatsApp",
+    "address": "Address",
+    "addressValue": "Batumi, Adjara, Georgia"
+  },
+  "footer": {
+    "allRights": "All rights reserved.",
+    "chat": "Chat with Giorgi"
+  },
+  "errors": {
+    "notFound": "Page Not Found",
+    "notFoundDesc": "Sorry, the page you requested does not exist.",
+    "backHome": "Back to Home"
+  }
+}
