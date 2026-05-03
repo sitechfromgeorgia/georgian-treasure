@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { createBrowserSupabaseClient } from '@/lib/supabase/client';
 import { cn } from '@/lib/utils';
 import {
   MessageSquare,
@@ -63,11 +64,14 @@ export default function ChatbotTraining() {
   const fetchChatHistory = async () => {
     try {
       setLoading(true);
-      const res = await fetch('/api/chat/history?limit=100');
-      if (res.ok) {
-        const data = await res.json();
-        setMessages(data.messages || []);
-      }
+      const supabase = createBrowserSupabaseClient();
+      const { data, error } = await supabase
+        .from('chatbot_messages')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(100);
+      if (error) throw error;
+      setMessages((data as ChatMessage[]) || []);
     } catch (error) {
       console.error('Error fetching chat history:', error);
     } finally {
@@ -77,14 +81,17 @@ export default function ChatbotTraining() {
 
   const loadSystemPrompt = async () => {
     try {
-      const res = await fetch('/api/chat/prompt');
-      if (res.ok) {
-        const data = await res.json();
-        setSystemPrompt(data.prompt || '');
-        setOriginalPrompt(data.prompt || '');
-      }
+      const supabase = createBrowserSupabaseClient();
+      const { data, error } = await supabase
+        .from('site_settings')
+        .select('*')
+        .eq('key', 'chatbot_system_prompt')
+        .single();
+      if (error) throw error;
+      const value = data?.value || '';
+      setSystemPrompt(value);
+      setOriginalPrompt(value);
     } catch {
-      // Fallback: load from module
       const { systemPrompt: sp } = await import('@/lib/chatbot/system-prompt');
       setSystemPrompt(sp);
       setOriginalPrompt(sp);
@@ -94,11 +101,11 @@ export default function ChatbotTraining() {
   const saveSystemPrompt = async () => {
     setSaving(true);
     try {
-      await fetch('/api/chat/prompt', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt: systemPrompt }),
-      });
+      const supabase = createBrowserSupabaseClient();
+      const { error } = await supabase
+        .from('site_settings')
+        .upsert({ key: 'chatbot_system_prompt', value: systemPrompt });
+      if (error) throw error;
       setOriginalPrompt(systemPrompt);
     } catch (error) {
       console.error('Error saving prompt:', error);

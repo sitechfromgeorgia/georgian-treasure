@@ -1,3 +1,5 @@
+import 'server-only'
+
 /**
  * Server-only Supabase admin client
  * NEVER import this in client components — use only in:
@@ -7,7 +9,7 @@
  */
 
 import { createClient } from '@supabase/supabase-js'
-import type { Tour, Lead, Booking, BlogPost, ChatbotMessage, AnalyticsEvent } from '@/types/supabase'
+import type { Lead, Booking, ChatbotMessage, AnalyticsEvent } from '@/types/supabase'
 
 export const createServiceClient = () => {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!

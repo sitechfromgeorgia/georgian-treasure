@@ -1,5 +1,5 @@
 import { createBrowserClient } from '@supabase/ssr'
-import type { Tour, Lead, Booking, BlogPost, ChatbotMessage, AnalyticsEvent } from '@/types/supabase'
+import type { Tour, Lead, Booking, ChatbotMessage, AnalyticsEvent } from '@/types/supabase'
 
 export const createBrowserSupabaseClient = () => {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!

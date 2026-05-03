@@ -7,7 +7,7 @@ export interface ChatMessage {
   id: string;
   role: 'user' | 'assistant';
   content: string;
-  metadata?: Record<string, unknown>;
+  metadata?: Record<string, string>;
 }
 
 export interface SuggestedTour {
@@ -141,7 +141,7 @@ export function useChat(language: string = 'en'): UseChatReturn {
 
       if (error) throw error;
       return true;
-    } catch (err) {
+    } catch (err: unknown) {
       console.error('Lead collection error:', err);
       return false;
     }

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { createBrowserSupabaseClient } from '@/lib/supabase/client';
 import { cn } from '@/lib/utils';
 import {
   Users,
@@ -75,33 +76,37 @@ export default function AdminDashboard() {
     const fetchDashboardData = async () => {
       try {
         setLoading(true);
+        const supabase = createBrowserSupabaseClient();
 
-        // Fetch tours count
-        const toursRes = await fetch('/api/tours?limit=1');
-        const toursData = await toursRes.json();
+        const { count: toursTotal, error: toursError } = await supabase
+          .from('tours')
+          .select('*', { count: 'exact', head: true });
+        if (toursError) throw toursError;
 
-        // Fetch leads
-        const leadsRes = await fetch('/api/leads?limit=50');
-        const leadsData = await leadsRes.json();
+        const { data: leads, count: leadsTotal, error: leadsError } = await supabase
+          .from('leads')
+          .select('*', { count: 'exact' })
+          .order('created_at', { ascending: false })
+          .limit(50);
+        if (leadsError) throw leadsError;
 
-        // Fetch bookings
-        const bookingsRes = await fetch('/api/bookings?limit=50');
-        const bookingsData = await bookingsRes.json();
-
-        const leads = leadsData.leads || [];
-        const bookings = bookingsData.bookings || [];
+        const { data: bookings, count: bookingsTotal, error: bookingsError } = await supabase
+          .from('bookings')
+          .select('*', { count: 'exact' })
+          .order('created_at', { ascending: false })
+          .limit(50);
+        if (bookingsError) throw bookingsError;
 
         // Calculate this month's leads
         const now = new Date();
         const thisMonth = now.getMonth();
         const thisYear = now.getFullYear();
-        const newLeadsThisMonth = leads.filter((l: any) => {
+        const newLeadsThisMonth = (leads || []).filter((l: any) => {
           const d = new Date(l.created_at);
           return d.getMonth() === thisMonth && d.getFullYear() === thisYear;
         }).length;
 
-        // Calculate total revenue from confirmed/paid bookings
-        const totalRevenue = bookings.reduce((sum: number, b: any) => {
+        const totalRevenue = (bookings || []).reduce((sum: number, b: any) => {
           if (b.status === 'confirmed' || b.status === 'paid' || b.status === 'completed') {
             return sum + (b.total_price_gel || 0);
           }
@@ -109,19 +114,18 @@ export default function AdminDashboard() {
         }, 0);
 
         setStats({
-          totalTours: toursData.pagination?.total || 0,
-          totalLeads: leadsData.pagination?.total || 0,
+          totalTours: toursTotal || 0,
+          totalLeads: leadsTotal || 0,
           newLeadsThisMonth,
-          totalBookings: bookingsData.pagination?.total || 0,
-          pendingBookings: bookings.filter((b: any) => b.status === 'pending').length,
+          totalBookings: bookingsTotal || 0,
+          pendingBookings: (bookings || []).filter((b: any) => b.status === 'pending').length,
           totalRevenue,
           revenueChange: 12.5,
           leadsChange: 8.2,
         });
 
-        setRecentLeads(leads.slice(0, 8));
+        setRecentLeads((leads || []).slice(0, 8));
 
-        // Generate leads chart data (last 30 days)
         const chartData: Record<string, number> = {};
         for (let i = 29; i >= 0; i--) {
           const d = new Date();
@@ -130,7 +134,7 @@ export default function AdminDashboard() {
           chartData[key] = 0;
         }
 
-        leads.forEach((lead: any) => {
+        (leads || []).forEach((lead: any) => {
           const d = new Date(lead.created_at);
           const key = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
           if (chartData[key] !== undefined) {
