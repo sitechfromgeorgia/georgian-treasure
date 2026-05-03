@@ -4,7 +4,7 @@ import { regions } from '@/data/content';
 import { extendedTours } from '@/data/extended-tours';
 import { RegionDetailClient, RegionDetails } from '@/components/tours/RegionDetailClient';
 
-const supportedLocales = ['ka', 'en', 'ru', 'uk', 'ar', 'he'];
+const supportedLocales = ['ka', 'en', 'ru', 'he'];
 
 export async function generateStaticParams() {
   const params: { lang: string; slug: string }[] = [];
@@ -300,7 +300,7 @@ const regionDetailsMap: Record<string, RegionDetails> = {
 
 export default async function RegionPage({ params }: { params: Promise<{ lang: string; slug: string }> }) {
   const { lang, slug } = await params;
-  const isRTL = lang === 'ar' || lang === 'he';
+  const isRTL = lang === 'he';
 
   const region = regions.find((r) => r.slug === slug);
   const details = regionDetailsMap[slug];

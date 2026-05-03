@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { extendedTours } from '@/data/extended-tours';
 import { TourDetailClient } from '@/components/tours/TourDetailClient';
 
-const supportedLocales = ['ka', 'en', 'ru', 'uk', 'ar', 'he'];
+const supportedLocales = ['ka', 'en', 'ru', 'he'];
 
 export async function generateStaticParams() {
   const params: { lang: string; slug: string }[] = [];
@@ -162,7 +162,7 @@ export default async function TourPage({ params }: { params: Promise<{ lang: str
   return (
     <main
       className="min-h-screen bg-[#001F3F]"
-      dir={lang === 'ar' || lang === 'he' ? 'rtl' : 'ltr'}
+      dir={lang === 'he' ? 'rtl' : 'ltr'}
     >
       {/* JSON-LD Structured Data */}
       <script

@@ -35,22 +35,22 @@ interface TourDetailClientProps {
 
 const difficultyConfig: Record<string, { labelKey: Record<string, string>; color: string; bg: string }> = {
   easy: {
-    labelKey: { ka: 'მარტივი', en: 'Easy', ru: 'Легко', uk: 'Легко', ar: 'سهل', he: 'קל' },
+    labelKey: { ka: 'მარტივი', en: 'Easy', ru: 'Легко', he: 'קל' },
     color: 'text-emerald-400',
     bg: 'bg-emerald-500/15',
   },
   moderate: {
-    labelKey: { ka: 'საშუალო', en: 'Moderate', ru: 'Средне', uk: 'Середньо', ar: 'متوسط', he: 'בינוני' },
+    labelKey: { ka: 'საშუალო', en: 'Moderate', ru: 'Средне', he: 'בינוני' },
     color: 'text-amber-400',
     bg: 'bg-amber-500/15',
   },
   challenging: {
-    labelKey: { ka: 'რთული', en: 'Challenging', ru: 'Сложно', uk: 'Складно', ar: 'صعب', he: 'מאתגר' },
+    labelKey: { ka: 'რთული', en: 'Challenging', ru: 'Сложно', he: 'מאתגר' },
     color: 'text-orange-400',
     bg: 'bg-orange-500/15',
   },
   extreme: {
-    labelKey: { ka: 'ექსტრემალური', en: 'Extreme', ru: 'Экстрим', uk: 'Екстрим', ar: 'متطرف', he: 'קיצוני' },
+    labelKey: { ka: 'ექსტრემალური', en: 'Extreme', ru: 'Экстрим', he: 'קיצוני' },
     color: 'text-red-400',
     bg: 'bg-red-500/15',
   },
@@ -60,8 +60,6 @@ const languageLabels: Record<string, string> = {
   ka: 'ქართული',
   en: 'English',
   ru: 'Русский',
-  uk: 'Українська',
-  ar: 'العربية',
   he: 'עברית',
 };
 
@@ -176,143 +174,97 @@ export function TourDetailClient({ tour }: TourDetailClientProps) {
 
   // Translated labels
   const labels = {
-    back: language === 'ka' ? 'უკან'
+back: language === 'ka' ? 'უკან'
       : language === 'en' ? 'Back to Tours'
       : language === 'ru' ? 'Назад к турам'
-      : language === 'uk' ? 'Назад до турів'
-      : language === 'ar' ? 'العودة إلى الجولات'
       : 'חזרה לסיורים',
     breadcrumbTours: language === 'ka' ? 'ტურები'
       : language === 'en' ? 'Tours'
       : language === 'ru' ? 'Туры'
-      : language === 'uk' ? 'Тури'
-      : language === 'ar' ? 'جولات'
       : 'סיורים',
     region: language === 'ka' ? 'რეგიონი'
       : language === 'en' ? 'Region'
       : language === 'ru' ? 'Регион'
-      : language === 'uk' ? 'Регіон'
-      : language === 'ar' ? 'المنطقة'
       : 'אזור',
     category: language === 'ka' ? 'კატეგორია'
       : language === 'en' ? 'Category'
       : language === 'ru' ? 'Категория'
-      : language === 'uk' ? 'Категорія'
-      : language === 'ar' ? 'الفئة'
       : 'קטגוריה',
     duration: language === 'ka' ? 'ხანგრძლივობა'
       : language === 'en' ? 'Duration'
       : language === 'ru' ? 'Длительность'
-      : language === 'uk' ? 'Тривалість'
-      : language === 'ar' ? 'المدة'
       : 'משך',
     difficulty: language === 'ka' ? 'სირთულე'
       : language === 'en' ? 'Difficulty'
       : language === 'ru' ? 'Сложность'
-      : language === 'uk' ? 'Складність'
-      : language === 'ar' ? 'المستوى'
       : 'רמת קושי',
     maxGroup: language === 'ka' ? 'მაქს. ჯგუფი'
       : language === 'en' ? 'Max Group'
       : language === 'ru' ? 'Макс. группа'
-      : language === 'uk' ? 'Макс. група'
-      : language === 'ar' ? 'الحد الأقصى'
       : 'גודל קבוצה מקס',
     languages: language === 'ka' ? 'ენები'
       : language === 'en' ? 'Languages'
       : language === 'ru' ? 'Языки'
-      : language === 'uk' ? 'Мови'
-      : language === 'ar' ? 'اللغات'
       : 'שפות',
     description: language === 'ka' ? 'აღწერა'
       : language === 'en' ? 'Description'
       : language === 'ru' ? 'Описание'
-      : language === 'uk' ? 'Опис'
-      : language === 'ar' ? 'الوصف'
       : 'תיאור',
     highlights: language === 'ka' ? 'მთავარი მომენტები'
       : language === 'en' ? 'Highlights'
       : language === 'ru' ? 'Основные моменты'
-      : language === 'uk' ? 'Основні моменти'
-      : language === 'ar' ? 'أبرز اللحظات'
       : 'נקודות מפתח',
     itinerary: language === 'ka' ? 'მარშრუტი'
       : language === 'en' ? 'Itinerary'
       : language === 'ru' ? 'Маршрут'
-      : language === 'uk' ? 'Маршрут'
-      : language === 'ar' ? 'خط السير'
       : 'מסלול',
     included: language === 'ka' ? 'რა შედის'
       : language === 'en' ? "What's Included"
       : language === 'ru' ? 'Что включено'
-      : language === 'uk' ? 'Що включено'
-      : language === 'ar' ? 'ما هو شامل'
       : 'מה כלול',
     notIncluded: language === 'ka' ? 'რა არ შედის'
       : language === 'en' ? 'Not Included'
       : language === 'ru' ? 'Не включено'
-      : language === 'uk' ? 'Не включено'
-      : language === 'ar' ? 'غير شامل'
       : 'לא כלול',
     whatToBring: language === 'ka' ? 'რა წამოიღოთ'
       : language === 'en' ? 'What to Bring'
       : language === 'ru' ? 'Что взять с собой'
-      : language === 'uk' ? 'Що взяти з собою'
-      : language === 'ar' ? 'ماذا تحضر'
       : 'מה להביא',
     gallery: language === 'ka' ? 'ფოტო გალერეა'
       : language === 'en' ? 'Gallery'
       : language === 'ru' ? 'Галерея'
-      : language === 'uk' ? 'Галерея'
-      : language === 'ar' ? 'معرض الصور'
       : 'גלריה',
     relatedTours: language === 'ka' ? 'მსგავსი ტურები'
       : language === 'en' ? 'Related Tours'
       : language === 'ru' ? 'Похожие туры'
-      : language === 'uk' ? 'Схожі тури'
-      : language === 'ar' ? 'جولات مشابهة'
       : 'סיורים דומים',
     bookNow: language === 'ka' ? 'დაჯავშნე ახლავე'
       : language === 'en' ? 'Book Now'
       : language === 'ru' ? 'Забронировать'
-      : language === 'uk' ? 'Забронювати'
-      : language === 'ar' ? 'احجز الآن'
       : 'הזמן עכשיו',
     bookViaWhatsApp: language === 'ka' ? 'WhatsApp-ით დაჯავშნა'
       : language === 'en' ? 'Book via WhatsApp'
       : language === 'ru' ? 'Забронировать через WhatsApp'
-      : language === 'uk' ? 'Забронювати через WhatsApp'
-      : language === 'ar' ? 'احجز عبر واتساب'
       : 'הזמן בוואטסאפ',
     perPerson: language === 'ka' ? 'ერთ ადამიანზე'
       : language === 'en' ? 'per person'
       : language === 'ru' ? 'на человека'
-      : language === 'uk' ? 'на людину'
-      : language === 'ar' ? 'للشخص'
       : 'לאדם',
     groupSizeLabel: language === 'ka' ? 'ჯგუფის ზომა'
       : language === 'en' ? 'Group Size'
       : language === 'ru' ? 'Размер группы'
-      : language === 'uk' ? 'Розмір групи'
-      : language === 'ar' ? 'حجم المجموعة'
       : 'גודל קבוצה',
     totalPrice: language === 'ka' ? 'საერთო ფასი'
       : language === 'en' ? 'Total Price'
       : language === 'ru' ? 'Общая цена'
-      : language === 'uk' ? 'Загальна ціна'
-      : language === 'ar' ? 'السعر الإجمالي'
       : 'מחיר כולל',
     share: language === 'ka' ? 'გაზიარება'
       : language === 'en' ? 'Share'
       : language === 'ru' ? 'Поделиться'
-      : language === 'uk' ? 'Поділитися'
-      : language === 'ar' ? 'مشاركة'
       : 'שתף',
     reviews: language === 'ka' ? 'მიმოხილვები'
       : language === 'en' ? 'Reviews'
       : language === 'ru' ? 'Отзывы'
-      : language === 'uk' ? 'Відгуки'
-      : language === 'ar' ? 'التقييمات'
       : 'ביקורות',
   };
 
@@ -364,8 +316,6 @@ export function TourDetailClient({ tour }: TourDetailClientProps) {
                     {language === 'ka' ? 'რეკომენდებული'
                       : language === 'en' ? 'Featured'
                       : language === 'ru' ? 'Рекомендуем'
-                      : language === 'uk' ? 'Рекомендовано'
-                      : language === 'ar' ? 'مميز'
                       : 'מומלץ'}
                   </span>
                 )}
@@ -779,8 +729,6 @@ export function TourDetailClient({ tour }: TourDetailClientProps) {
                     {language === 'ka' ? 'მიმოხილვები მალე დაემატება'
                       : language === 'en' ? 'Reviews coming soon'
                       : language === 'ru' ? 'Отзывы скоро будут добавлены'
-                      : language === 'uk' ? 'Відгуки незабаром'
-                      : language === 'ar' ? 'التقييمات قريباً'
                       : 'ביקורות בקרוב'}
                   </p>
                 </div>

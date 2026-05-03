@@ -121,9 +121,9 @@ export function ToursCatalogClient({ tours, lang }: ToursCatalogClientProps) {
   };
 
   const sortLabels: Record<string, Record<string, string>> = {
-    popular: { ka: 'პოპულარობა', en: 'Popular', ru: 'Популярность', uk: 'Популярність', ar: 'الشعبية', he: 'פופולריות' },
-    priceAsc: { ka: 'ფასი: ზრდადი', en: 'Price: Low to High', ru: 'Цена: по возрастанию', uk: 'Ціна: за зростанням', ar: 'السعر: من الأقل', he: 'מחיר: נמוך לגבוה' },
-    priceDesc: { ka: 'ფასი: კლებადი', en: 'Price: High to Low', ru: 'Цена: по убыванию', uk: 'Ціна: за спаданням', ar: 'السعر: من الأعلى', he: 'מחיר: גבוה לנמוך' },
+    popular: { ka: 'პოპულარობა', en: 'Popular', ru: 'Популярность', he: 'פופולריות' },
+    priceAsc: { ka: 'ფასი: ზრდადი', en: 'Price: Low to High', ru: 'Цена: по возрастанию', he: 'מחיר: נמוך לגבוה' },
+    priceDesc: { ka: 'ფასი: კლებადი', en: 'Price: High to Low', ru: 'Цена: по убыванию', he: 'מחיר: גבוה לנמוך' },
   };
 
   // No results labels
@@ -131,40 +131,30 @@ export function ToursCatalogClient({ tours, lang }: ToursCatalogClientProps) {
     language === 'ka' ? 'ტურები ვერ მოიძებნა'
     : language === 'en' ? 'No tours found'
     : language === 'ru' ? 'Туры не найдены'
-    : language === 'uk' ? 'Тури не знайдено'
-    : language === 'ar' ? 'لم يتم العثور على جولات'
     : 'לא נמצאו סיורים';
 
   const noResultsDesc =
     language === 'ka' ? 'სცადეთ სხვა ფილტრები ან საძიებო სიტყვა'
     : language === 'en' ? 'Try adjusting your filters or search query'
     : language === 'ru' ? 'Попробуйте изменить фильтры или поисковый запрос'
-    : language === 'uk' ? 'Спробуйте змінити фільтри або пошуковий запит'
-    : language === 'ar' ? 'حاول تعديل الفلاتر أو استعلام البحث'
     : 'נסה להתאים את המסננים או שאילתת החיפוש';
 
   const clearFiltersLabel =
     language === 'ka' ? 'ფილტრების გასუფთავება'
     : language === 'en' ? 'Clear Filters'
     : language === 'ru' ? 'Сбросить фильтры'
-    : language === 'uk' ? 'Очистити фільтри'
-    : language === 'ar' ? 'مسح الفلاتر'
     : 'נקה מסננים';
 
   const prevLabel =
     language === 'ka' ? 'წინა'
     : language === 'en' ? 'Previous'
     : language === 'ru' ? 'Назад'
-    : language === 'uk' ? 'Назад'
-    : language === 'ar' ? 'السابق'
     : 'הקודם';
 
   const nextLabel =
     language === 'ka' ? 'შემდეგი'
     : language === 'en' ? 'Next'
     : language === 'ru' ? 'Вперед'
-    : language === 'uk' ? 'Вперед'
-    : language === 'ar' ? 'التالي'
     : 'הבא';
 
   return (

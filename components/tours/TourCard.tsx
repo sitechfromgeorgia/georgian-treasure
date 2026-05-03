@@ -20,36 +20,36 @@ const difficultyColors: Record<string, string> = {
 };
 
 const difficultyLabels: Record<string, Record<string, string>> = {
-  easy: { ka: 'მარტივი', en: 'Easy', ru: 'Легко', uk: 'Легко', ar: 'سهل', he: 'קל' },
-  moderate: { ka: 'საშუალო', en: 'Moderate', ru: 'Средне', uk: 'Середньо', ar: 'متوسط', he: 'בינוני' },
-  challenging: { ka: 'რთული', en: 'Challenging', ru: 'Сложно', uk: 'Складно', ar: 'صعب', he: 'מאתגר' },
-  extreme: { ka: 'ექსტრემალური', en: 'Extreme', ru: 'Экстрим', uk: 'Екстрим', ar: 'متطرف', he: 'קיצוני' },
+  easy: { ka: 'მარტივი', en: 'Easy', ru: 'Легко', he: 'קל' },
+  moderate: { ka: 'საშუალო', en: 'Moderate', ru: 'Средне', he: 'בינוני' },
+  challenging: { ka: 'რთული', en: 'Challenging', ru: 'Сложно', he: 'מאתגר' },
+  extreme: { ka: 'ექსტრემალური', en: 'Extreme', ru: 'Экстрим', he: 'קיצוני' },
 };
 
 const categoryLabels: Record<string, Record<string, string>> = {
-  city: { ka: 'ქალაქური', en: 'City', ru: 'Городской', uk: 'Міський', ar: 'مدينة', he: 'עירוני' },
-  mountain: { ka: 'მთის', en: 'Mountain', ru: 'Горный', uk: 'Гірський', ar: 'جبل', he: 'הרים' },
-  wine: { ka: 'ღვინის', en: 'Wine', ru: 'Винный', uk: 'Винний', ar: 'نبيذ', he: 'יין' },
-  adventure: { ka: 'სათავგადასავლო', en: 'Adventure', ru: 'Приключение', uk: 'Пригода', ar: 'مغامرة', he: 'הרפתקה' },
-  cultural: { ka: 'კულტურული', en: 'Cultural', ru: 'Культурный', uk: 'Культурний', ar: 'ثقافي', he: 'תרבותי' },
-  food: { ka: 'გასტრონომიული', en: 'Food', ru: 'Гастро', uk: 'Гастро', ar: 'طعام', he: 'אוכל' },
-  transfer: { ka: 'ტრანსფერი', en: 'Transfer', ru: 'Трансфер', uk: 'Трансфер', ar: 'نقل', he: 'הסעה' },
-  custom: { ka: 'ინდივიდუალური', en: 'Custom', ru: 'Индивид.', uk: 'Індивід.', ar: 'مخصص', he: 'מותאם' },
+  city: { ka: 'ქალაქური', en: 'City', ru: 'Городской', he: 'עירוני' },
+  mountain: { ka: 'მთის', en: 'Mountain', ru: 'Горный', he: 'הרים' },
+  wine: { ka: 'ღვინის', en: 'Wine', ru: 'Винный', he: 'יין' },
+  adventure: { ka: 'სათავგადასავლო', en: 'Adventure', ru: 'Приключение', he: 'הרפתקה' },
+  cultural: { ka: 'კულტურული', en: 'Cultural', ru: 'Культурный', he: 'תרבותי' },
+  food: { ka: 'გასტრონომიული', en: 'Food', ru: 'Гастро', he: 'אוכל' },
+  transfer: { ka: 'ტრანსფერი', en: 'Transfer', ru: 'Трансфер', he: 'הסעה' },
+  custom: { ka: 'ინდივიდუალური', en: 'Custom', ru: 'Индивид.', he: 'מותאם' },
 };
 
 const regionLabels: Record<string, Record<string, string>> = {
-  adjara: { ka: 'აჭარა', en: 'Adjara', ru: 'Аджария', uk: 'Аджарія', ar: 'أجاريا', he: 'אג׳ריה' },
-  tbilisi: { ka: 'თბილისი', en: 'Tbilisi', ru: 'Тбилиси', uk: 'Тбілісі', ar: 'تبليسي', he: 'טביליסי' },
-  kakheti: { ka: 'კახეთი', en: 'Kakheti', ru: 'Кахетия', uk: 'Кахетія', ar: 'كاخيتي', he: 'קאחתי' },
-  kazbegi: { ka: 'ყაზბეგი', en: 'Kazbegi', ru: 'Казбеги', uk: 'Казбегі', ar: 'كازبيجي', he: 'קאזבגי' },
-  svaneti: { ka: 'სვანეთი', en: 'Svaneti', ru: 'Сванетия', uk: 'Сванетія', ar: 'سفانيتي', he: 'סוונטי' },
-  west: { ka: 'დასავლეთი', en: 'West', ru: 'Запад', uk: 'Захід', ar: 'الغرب', he: 'מערב' },
-  samtskhe: { ka: 'სამცხე', en: 'Samtskhe', ru: 'Самцхе', uk: 'Самцхе', ar: 'سامتسخه', he: 'סאמצחה' },
-  imereti: { ka: 'იმერეთი', en: 'Imereti', ru: 'Имеретия', uk: 'Імеретія', ar: 'إيميريتي', he: 'אימרתי' },
-  racha: { ka: 'რაჭა', en: 'Racha', ru: 'Рача', uk: 'Рача', ar: 'راتشا', he: 'ראצה' },
-  guria: { ka: 'გურია', en: 'Guria', ru: 'Гурия', uk: 'Гурія', ar: 'جوريا', he: 'גוריה' },
-  samegrelo: { ka: 'სამეგრელო', en: 'Samegrelo', ru: 'Самегрело', uk: 'Самегрело', ar: 'ساميغريلو', he: 'סאמגרלו' },
-  tusheti: { ka: 'თუშეთი', en: 'Tusheti', ru: 'Тушетия', uk: 'Тушетія', ar: 'توشيتي', he: 'תושטיה' },
+  adjara: { ka: 'აჭარა', en: 'Adjara', ru: 'Аджария', he: 'אג׳ריה' },
+  tbilisi: { ka: 'თბილისი', en: 'Tbilisi', ru: 'Тбилиси', he: 'טביליסי' },
+  kakheti: { ka: 'კახეთი', en: 'Kakheti', ru: 'Кахетия', he: 'קאחתי' },
+  kazbegi: { ka: 'ყაზბეგი', en: 'Kazbegi', ru: 'Казбеги', he: 'קאזבגי' },
+  svaneti: { ka: 'სვანეთი', en: 'Svaneti', ru: 'Сванетия', he: 'סוונטי' },
+  west: { ka: 'დასავლეთი', en: 'West', ru: 'Запад', he: 'מערב' },
+  samtskhe: { ka: 'სამცხე', en: 'Samtskhe', ru: 'Самцхе', he: 'סאמצחה' },
+  imereti: { ka: 'იმერეთი', en: 'Imereti', ru: 'Имеретия', he: 'אימרתי' },
+  racha: { ka: 'რაჭა', en: 'Racha', ru: 'Рача', he: 'ראצה' },
+  guria: { ka: 'გურია', en: 'Guria', ru: 'Гурия', he: 'גוריה' },
+  samegrelo: { ka: 'სამეგრელო', en: 'Samegrelo', ru: 'Самегрело', he: 'סאמגרלו' },
+  tusheti: { ka: 'თუშეთი', en: 'Tusheti', ru: 'Тушетия', he: 'תושטיה' },
 };
 
 export function TourCard({ tour, index = 0 }: TourCardProps) {
@@ -69,8 +69,6 @@ export function TourCard({ tour, index = 0 }: TourCardProps) {
     language === 'ka' ? 'დეტალების ნახვა'
     : language === 'en' ? 'View Details'
     : language === 'ru' ? 'Подробнее'
-    : language === 'uk' ? 'Деталі'
-    : language === 'ar' ? 'عرض التفاصيل'
     : 'פרטים';
 
   return (
@@ -107,8 +105,6 @@ export function TourCard({ tour, index = 0 }: TourCardProps) {
               {language === 'ka' ? 'რეკომენდებული'
                 : language === 'en' ? 'Featured'
                 : language === 'ru' ? 'Рекомендуем'
-                : language === 'uk' ? 'Рекомендовано'
-                : language === 'ar' ? 'مميز'
                 : 'מומלץ'}
             </span>
           </motion.div>

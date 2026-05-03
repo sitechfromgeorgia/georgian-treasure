@@ -4,7 +4,7 @@ import { extendedTours } from '@/data/extended-tours';
 import { RegionCardClient } from '@/components/tours/RegionCardClient';
 
 export async function generateStaticParams() {
-  return ['ka', 'en', 'ru', 'uk', 'ar', 'he'].map((lang) => ({ lang }));
+  return ['ka', 'en', 'ru', 'he'].map((lang) => ({ lang }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -14,8 +14,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     ka: 'რეგიონები | Georgian Treasure - გამოიკვლიეთ საქართველოს 12 რეგიონი',
     en: 'Regions | Georgian Treasure - Explore 12 Regions of Georgia',
     ru: 'Регионы | Georgian Treasure - Исследуйте 12 регионов Грузии',
-    uk: 'Регіони | Georgian Treasure - Дослідіть 12 регіонів Грузії',
-    ar: 'المناطق | Georgian Treasure - استكشف 12 منطقة في جورجيا',
     he: 'אזורים | Georgian Treasure - גלה 12 אזורים בגאורגיה',
   };
 
@@ -23,8 +21,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     ka: 'აღმოაჩინეთ საქართველოს 12 რეგიონი: აჭარა, თბილისი, კახეთი, ყაზბეგი, სვანეთი, იმერეთი, რაჭა, გურია, სამეგრელო, თუშეთი და სხვა. თითოეულ რეგიონში უნიკალური ტურები და შეთავაზებები.',
     en: 'Discover 12 regions of Georgia: Adjara, Tbilisi, Kakheti, Kazbegi, Svaneti, Imereti, Racha, Guria, Samegrelo, Tusheti and more. Unique tours and experiences in each region.',
     ru: 'Откройте для себя 12 регионов Грузии: Аджария, Тбилиси, Кахетия, Казбеги, Сванетия, Имеретия, Рача, Гурия, Самегрело, Тушетия и другие. Уникальные туры и впечатления в каждом регионе.',
-    uk: 'Відкрийте для себе 12 регіонів Грузії: Аджарія, Тбілісі, Кахетія, Казбегі, Сванетія, Імеретія, Рача, Гурія, Самегрело, Тушетія та інші. Унікальні тури та враження в кожному регіоні.',
-    ar: 'اكتشف 12 منطقة في جورجيا: أجاريا، تبليسي، كاخيتي، كازبيجي، سفانيتي، إيميريتي، راتشا، غوريا، ساميغريلو، توشيتي والمزيد. جولات فريدة وتجارب في كل منطقة.',
     he: 'גלה 12 אזורים בגאורגיה: אג׳ריה, טביליסי, קאחתי, קאזבגי, סוונטי, אימרתי, ראצה, גוריה, סאמגרלו, תושטיה ועוד. סיורים וחוויות ייחודיים בכל אזור.',
   };
 
@@ -54,20 +50,16 @@ export default async function RegionsPage({ params }: { params: Promise<{ lang: 
     lang === 'ka' ? 'საქართველოს რეგიონები'
     : lang === 'en' ? 'Regions of Georgia'
     : lang === 'ru' ? 'Регионы Грузии'
-    : lang === 'uk' ? 'Регіони Грузії'
-    : lang === 'ar' ? 'مناطق جورجيا'
     : 'אזורי גאורגיה';
 
   const heroSubtitle =
     lang === 'ka' ? 'გამოიკვლიეთ საქართველოს 12 უნიკალური რეგიონი, თითოეული თავისი სილამაზით და ტრადიციებით'
     : lang === 'en' ? 'Explore 12 unique regions of Georgia, each with its own beauty and traditions'
     : lang === 'ru' ? 'Исследуйте 12 уникальных регионов Грузии, каждый со своей красотой и традициями'
-    : lang === 'uk' ? 'Дослідіть 12 унікальних регіонів Грузії, кожен зі своєю красою та традиціями'
-    : lang === 'ar' ? 'استكشف 12 منطقة فريدة في جورجيا، كل منها بجمالها وتقاليدها الخاصة'
     : 'גלה 12 אזורים ייחודיים בגאורגיה, כל אחד עם היופי והמסורות שלו';
 
   return (
-    <main className="min-h-screen bg-[#001F3F]" dir={lang === 'ar' || lang === 'he' ? 'rtl' : 'ltr'}>
+    <main className="min-h-screen bg-[#001F3F]" dir={lang === 'he' ? 'rtl' : 'ltr'}>
       {/* Hero Section */}
       <section className="relative bg-gradient-to-b from-[#001F3F] to-[#001F3F]/90 py-16 md:py-24 border-b border-white/10">
         <div className="absolute inset-0 opacity-10" style={{

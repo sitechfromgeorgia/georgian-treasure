@@ -58,11 +58,11 @@ export async function generateMetadata({
   }
 
   const locale = lang as BlogLanguage;
-  const t = post.translations[locale] || post.translations.en;
+  const t = post.translations[locale] || post.translations.en!;
 
   return generateMetaTags({
-    title: post.seoTitle || t.title,
-    description: post.seoDescription || t.excerpt,
+    title: post.seoTitle || t!.title,
+    description: post.seoDescription || t!.excerpt,
     image: post.image,
     url: `/${lang}/blog/${post.slug}`,
     locale: lang,
@@ -115,7 +115,7 @@ export default async function BlogPostPage({
   const locale = (supportedLangs.includes(lang as BlogLanguage)
     ? lang
     : 'en') as BlogLanguage;
-  const t = post.translations[locale];
+  const t = post.translations[locale]!;
   const readingTime = calculateReadingTime(t.content);
   const relatedPosts = getRelatedPosts(slug, 3);
   const shareLinks = getShareLinks(slug, t.title, lang);
@@ -428,7 +428,7 @@ export default async function BlogPostPage({
                   <div className="relative w-24 h-24 rounded-lg overflow-hidden shrink-0">
                     <Image
                       src={relatedPost.image}
-                      alt={relatedPost.translations[locale].title}
+                      alt={relatedPost.translations[locale]!.title}
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-110"
                     />
@@ -438,7 +438,7 @@ export default async function BlogPostPage({
                       {relatedPost.category}
                     </span>
                     <h3 className="text-sm font-semibold text-white group-hover:text-[#F9E272] transition-colors line-clamp-2">
-                      {relatedPost.translations[locale].title}
+                      {relatedPost.translations[locale]!.title}
                     </h3>
                     <span className="text-xs text-white/40 mt-auto">
                       {new Date(relatedPost.date).toLocaleDateString('en-US', {

@@ -36,8 +36,6 @@ export function TourBookingForm({ tour }: TourBookingFormProps) {
       ka: { booking: 'ტურის დაჯავშნა', name: 'სახელი', date: 'თარიღი', people: 'ადამიანები', phone: 'ტელეფონი', total: 'ჯამი', discount: 'ფასდაკლება', tour: 'ტური' },
       en: { booking: 'Tour Booking', name: 'Name', date: 'Date', people: 'People', phone: 'Phone', total: 'Total', discount: 'Discount', tour: 'Tour' },
       ru: { booking: 'Бронирование тура', name: 'Имя', date: 'Дата', people: 'Человек', phone: 'Телефон', total: 'Итого', discount: 'Скидка', tour: 'Тур' },
-      uk: { booking: 'Бронювання туру', name: "Ім'я", date: 'Дата', people: 'Осіб', phone: 'Телефон', total: 'Разом', discount: 'Знижка', tour: 'Тур' },
-      ar: { booking: 'حجز جولة', name: 'الاسم', date: 'التاريخ', people: 'الأشخاص', phone: 'الهاتف', total: 'الإجمالي', discount: 'الخصم', tour: 'جولة' },
       he: { booking: 'הזמנת סיור', name: 'שם', date: 'תאריך', people: 'אנשים', phone: 'טלפון', total: 'סה"כ', discount: 'הנחה', tour: 'סיור' },
     };
 
@@ -64,68 +62,46 @@ export function TourBookingForm({ tour }: TourBookingFormProps) {
     title: language === 'ka' ? 'დაჯავშნე ტური'
       : language === 'en' ? 'Book This Tour'
       : language === 'ru' ? 'Забронировать тур'
-      : language === 'uk' ? 'Забронювати тур'
-      : language === 'ar' ? 'احجز هذه الجولة'
       : 'הזמן סיור זה',
     name: language === 'ka' ? 'თქვენი სახელი'
       : language === 'en' ? 'Your Name'
       : language === 'ru' ? 'Ваше имя'
-      : language === 'uk' ? "Ваше ім'я"
-      : language === 'ar' ? 'اسمك'
       : 'השם שלך',
     date: language === 'ka' ? 'თარიღი'
       : language === 'en' ? 'Preferred Date'
       : language === 'ru' ? 'Предпочтительная дата'
-      : language === 'uk' ? 'Бажана дата'
-      : language === 'ar' ? 'التاريخ المفضل'
       : 'תאריך מועדף',
     people: language === 'ka' ? 'ადამიანების რაოდენობა'
       : language === 'en' ? 'Number of People'
       : language === 'ru' ? 'Количество человек'
-      : language === 'uk' ? 'Кількість осіб'
-      : language === 'ar' ? 'عدد الأشخاص'
       : 'מספר אנשים',
     phone: language === 'ka' ? 'ტელეფონი / WhatsApp'
       : language === 'en' ? 'Phone / WhatsApp'
       : language === 'ru' ? 'Телефон / WhatsApp'
-      : language === 'uk' ? 'Телефон / WhatsApp'
-      : language === 'ar' ? 'الهاتف / واتساب'
       : 'טלפון / וואטסאפ',
     message: language === 'ka' ? 'დამატებითი შეტყობინება'
       : language === 'en' ? 'Additional Message'
       : language === 'ru' ? 'Дополнительное сообщение'
-      : language === 'uk' ? 'Додаткове повідомлення'
-      : language === 'ar' ? 'رسالة إضافية'
       : 'הודעה נוספת',
     submit: language === 'ka' ? 'დაჯავშნა WhatsApp-ით'
       : language === 'en' ? 'Book via WhatsApp'
       : language === 'ru' ? 'Забронировать через WhatsApp'
-      : language === 'uk' ? 'Забронювати через WhatsApp'
-      : language === 'ar' ? 'احجز عبر الواتساب'
       : 'הזמן דרך וואטסאפ',
     perPerson: language === 'ka' ? 'ერთ ადამიანზე'
       : language === 'en' ? 'per person'
       : language === 'ru' ? 'на человека'
-      : language === 'uk' ? 'на особу'
-      : language === 'ar' ? 'للشخص'
       : 'לאדם',
     total: language === 'ka' ? 'ჯამი'
       : language === 'en' ? 'Total'
       : language === 'ru' ? 'Итого'
-      : language === 'uk' ? 'Разом'
-      : language === 'ar' ? 'الإجمالي'
       : 'סה"כ',
     discountApplied: language === 'ka' ? 'ჯგუფური ფასდაკლება მოქმედებს!'
       : language === 'en' ? 'Group discount applied!'
       : language === 'ru' ? 'Групповая скидка применена!'
-      : language === 'uk' ? 'Групова знижка застосована!'
-      : language === 'ar' ? 'تم تطبيق خصم المجموعة!'
       : 'הנחת קבוצה הופעלה!',
     discountInfo: language === 'ka' ? '5+ ადამიანი = 20% ფასდაკლება'
       : language === 'en' ? '5+ people = 20% discount'
       : language === 'ru' ? '5+ человек = скидка 20%'
-      : language === 'uk' ? '5+ осіб = знижка 20%'
-      : language === 'ar' ? '5+ أشخاص = خصم 20%'
       : '5+ אנשים = 20% הנחה',
   };
 
@@ -220,7 +196,7 @@ export function TourBookingForm({ tour }: TourBookingFormProps) {
         <div>
           <label className="flex items-center gap-2 text-sm text-white/70 mb-1.5">
             <MessageSquare size={14} className="text-[#D4AF37]" />
-            {labels.message} <span className="text-white/30">({language === 'en' ? 'optional' : language === 'ka' ? 'არასავალდებულო' : language === 'ru' ? 'необязательно' : language === 'uk' ? 'необов\'язково' : language === 'ar' ? 'اختياري' : 'רשות'})</span>
+            {labels.message} <span className="text-white/30">({language === 'en' ? 'optional' : language === 'ka' ? 'არასავალდებულო' : language === 'ru' ? 'необязательно' : 'רשות'})</span>
           </label>
           <textarea
             value={message}

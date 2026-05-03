@@ -16,7 +16,7 @@ export interface BlogPost {
   seoTitle: string;
   seoDescription: string;
   keywords: string;
-  translations: Record<BlogLanguage, BlogPostTranslation>;
+  translations: Partial<Record<BlogLanguage, BlogPostTranslation>>;
 }
 
 export const blogCategories = [

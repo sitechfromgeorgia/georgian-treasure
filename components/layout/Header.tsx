@@ -33,8 +33,6 @@ const languages = [
   { code: 'ka', name: 'ქართული', flag: '🇬🇪' },
   { code: 'en', name: 'English', flag: '🇬🇧' },
   { code: 'ru', name: 'Русский', flag: '🇷🇺' },
-  { code: 'uk', name: 'Українська', flag: '🇺🇦' },
-  { code: 'ar', name: 'العربية', flag: '🇸🇦' },
   { code: 'he', name: 'עברית', flag: '🇮🇱' },
 ];
 
@@ -140,8 +138,6 @@ export function Header() {
               {language === 'ka' ? 'ინდ. ტური'
                 : language === 'en' ? 'Custom Tour'
                 : language === 'ru' ? 'Инд. тур'
-                : language === 'uk' ? 'Інд. тур'
-                : language === 'ar' ? 'جولة مخصصة'
                 : 'סיור מותאם'}
             </Link>
 
@@ -233,8 +229,6 @@ export function Header() {
                   {language === 'ka' ? 'ინდივიდუალური ტური'
                     : language === 'en' ? 'Custom Tour'
                     : language === 'ru' ? 'Индивидуальный тур'
-                    : language === 'uk' ? 'Індивідуальний тур'
-                    : language === 'ar' ? 'جولة مخصصة'
                     : 'סיור מותאם אישית'}
                 </Link>
               </nav>

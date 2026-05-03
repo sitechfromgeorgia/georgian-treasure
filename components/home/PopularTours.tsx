@@ -14,24 +14,18 @@ export function PopularTours() {
       ka: 'აღმოაჩინე სილამაზე',
       en: 'Explore the Beauty',
       ru: 'Откройте красоту',
-      uk: 'Відкрийте красу',
-      ar: 'استكشف الجمال',
       he: 'גלה את היופי'
     },
     startingFrom: {
       ka: 'იწყება',
       en: 'Starting from',
       ru: 'От',
-      uk: 'Від',
-      ar: 'يبدأ من',
       he: 'החל מ-'
     },
     viewAll: {
       ka: 'ყველა ტურის ნახვა',
       en: 'View All Tours',
       ru: 'Все туры',
-      uk: 'Всі тури',
-      ar: 'عرض جميع الجولات',
       he: 'צפה בכל הסיורים'
     }
   };

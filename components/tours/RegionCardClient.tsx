@@ -14,7 +14,7 @@ interface RegionCardClientProps {
 }
 
 export function RegionCardClient({ region, lang, tourCount, index }: RegionCardClientProps) {
-  const isRTL = lang === 'ar' || lang === 'he';
+  const isRTL = lang === 'he';
   const tr = region.translations[lang as keyof typeof region.translations] || region.translations.en;
 
   return (
@@ -53,18 +53,14 @@ export function RegionCardClient({ region, lang, tourCount, index }: RegionCardC
           {tourCount > 0 && (
             <div className={`absolute top-3 ${isRTL ? 'left-3' : 'right-3'}`}>
               <span className="px-2.5 py-1 bg-[#D4AF37]/20 backdrop-blur-sm text-[#D4AF37] text-xs font-bold rounded-full border border-[#D4AF37]/30">
-                {tourCount} {tourCount === 1
+                {tourCount}                 {tourCount === 1
                   ? (lang === 'ka' ? 'ტური'
                     : lang === 'en' ? 'tour'
                     : lang === 'ru' ? 'тур'
-                    : lang === 'uk' ? 'тур'
-                    : lang === 'ar' ? 'جولة'
                     : 'סיור')
                   : (lang === 'ka' ? 'ტური'
                     : lang === 'en' ? 'tours'
                     : lang === 'ru' ? 'тура'
-                    : lang === 'uk' ? 'тури'
-                    : lang === 'ar' ? 'جولات'
                     : 'סיורים')
                 }
               </span>
@@ -85,8 +81,6 @@ export function RegionCardClient({ region, lang, tourCount, index }: RegionCardC
               {lang === 'ka' ? 'გაიგე მეტი'
                 : lang === 'en' ? 'Explore'
                 : lang === 'ru' ? 'Исследовать'
-                : lang === 'uk' ? 'Дослідити'
-                : lang === 'ar' ? 'استكشف'
                 : 'חקור'}
             </span>
             <ArrowRight size={14} className={`group-hover:translate-x-1 transition-transform duration-300 ${isRTL ? 'rotate-180 group-hover:-translate-x-1' : ''}`} />

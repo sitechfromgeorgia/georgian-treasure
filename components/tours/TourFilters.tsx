@@ -69,10 +69,10 @@ export function TourFilters({
 
   const getDifficultyLabel = (key: string) => {
     const labels: Record<string, Record<string, string>> = {
-      easy: { ka: 'მარტივი', en: 'Easy', ru: 'Легко', uk: 'Легко', ar: 'سهل', he: 'קל' },
-      moderate: { ka: 'საშუალო', en: 'Moderate', ru: 'Средне', uk: 'Середньо', ar: 'متوسط', he: 'בינוני' },
-      challenging: { ka: 'რთული', en: 'Challenging', ru: 'Сложно', uk: 'Складно', ar: 'صعب', he: 'מאתגר' },
-      extreme: { ka: 'ექსტრემალური', en: 'Extreme', ru: 'Экстрим', uk: 'Екстрим', ar: 'متطرف', he: 'קיצוני' },
+      easy: { ka: 'მარტივი', en: 'Easy', ru: 'Легко', he: 'קל' },
+      moderate: { ka: 'საშუალო', en: 'Moderate', ru: 'Средне', he: 'בינוני' },
+      challenging: { ka: 'რთული', en: 'Challenging', ru: 'Сложно', he: 'מאתגר' },
+      extreme: { ka: 'ექსტრემალური', en: 'Extreme', ru: 'Экстрим', he: 'קיצוני' },
     };
     return labels[key]?.[language] || key;
   };
@@ -219,8 +219,6 @@ export function TourFilters({
               {language === 'ka' ? 'გასუფთავება'
                 : language === 'en' ? 'Clear all'
                 : language === 'ru' ? 'Сбросить'
-                : language === 'uk' ? 'Очистити'
-                : language === 'ar' ? 'مسح الكل'
                 : 'נקה הכל'}
             </button>
           </motion.div>
@@ -314,8 +312,6 @@ export function TourFilters({
                     {language === 'ka' ? 'ყველა'
                       : language === 'en' ? 'All'
                       : language === 'ru' ? 'Все'
-                      : language === 'uk' ? 'Всі'
-                      : language === 'ar' ? 'الكل'
                       : 'הכל'}
                   </button>
                   {difficultyKeys.map((d) => (
@@ -419,8 +415,6 @@ export function TourFilters({
                   {language === 'ka' ? 'ფილტრების გასუფთავება'
                     : language === 'en' ? 'Clear all filters'
                     : language === 'ru' ? 'Сбросить фильтры'
-                    : language === 'uk' ? 'Очистити фільтри'
-                    : language === 'ar' ? 'مسح جميع الفلاتر'
                     : 'נקה את כל המסננים'}
                 </button>
               )}

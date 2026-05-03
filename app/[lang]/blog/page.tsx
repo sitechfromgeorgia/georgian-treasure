@@ -113,7 +113,7 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: str
               <div className="relative h-64 lg:h-auto min-h-[400px]">
                 <Image
                   src={featuredPost.image}
-                  alt={featuredPost.translations[locale].title}
+                  alt={featuredPost.translations[locale]!.title}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   priority
@@ -128,10 +128,10 @@ export default async function BlogPage({ params }: { params: Promise<{ lang: str
                   {featuredPost.category}
                 </span>
                 <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4 group-hover:text-[#F9E272] transition-colors">
-                  {featuredPost.translations[locale].title}
+                  {featuredPost.translations[locale]!.title}
                 </h2>
                 <p className="text-white/60 mb-6 leading-relaxed">
-                  {featuredPost.translations[locale].excerpt}
+                  {featuredPost.translations[locale]!.excerpt}
                 </p>
                 <div className="flex items-center gap-4 text-sm text-white/40 mb-6">
                   <span className="flex items-center gap-1.5">
@@ -206,7 +206,7 @@ function PostCard({
   locale: BlogLanguage;
   lang: string;
 }) {
-  const t = post.translations[locale];
+  const t = post.translations[locale]!;
 
   return (
     <Link

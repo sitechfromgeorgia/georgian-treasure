@@ -53,116 +53,82 @@ export function RegionDetailClient({
     about: lang === 'ka' ? `რეგიონის შესახებ`
       : lang === 'en' ? `About ${regionTr.name}`
       : lang === 'ru' ? `О регионе ${regionTr.name}`
-      : lang === 'uk' ? `Про регіон ${regionTr.name}`
-      : lang === 'ar' ? `حول ${regionTr.name}`
       : `אודות ${regionTr.name}`,
     facts: lang === 'ka' ? 'საინტერესო ფაქტები'
       : lang === 'en' ? 'Interesting Facts'
       : lang === 'ru' ? 'Интересные факты'
-      : lang === 'uk' ? 'Цікаві факти'
-      : lang === 'ar' ? 'حقائق مثيرة للاهتمام'
       : 'עובדות מעניינות',
     bestTime: lang === 'ka' ? 'საუკეთესო დრო ვიზიტისთვის'
       : lang === 'en' ? 'Best Time to Visit'
       : lang === 'ru' ? 'Лучшее время для посещения'
-      : lang === 'uk' ? 'Найкращий час для відвідування'
-      : lang === 'ar' ? 'أفضل وقت للزيارة'
       : 'הזמן הטוב ביותר לביקור',
     attractions: lang === 'ka' ? 'ღირსშესანიშნაობები'
       : lang === 'en' ? 'Nearby Attractions'
       : lang === 'ru' ? 'Достопримечательности'
-      : lang === 'uk' ? 'Визначні пам\'ятки'
-      : lang === 'ar' ? 'معالم الجذب القريبة'
       : 'אתרים בקרבת מקום',
     tours: lang === 'ka' ? `ტურები ${regionTr.name}ში`
       : lang === 'en' ? `Tours in ${regionTr.name}`
       : lang === 'ru' ? `Туры в ${regionTr.name}`
-      : lang === 'uk' ? `Тури в ${regionTr.name}`
-      : lang === 'ar' ? `جولات في ${regionTr.name}`
       : `סיורים ב${regionTr.name}`,
-    toursDesc: lang === 'ka' ? 'აღმოაჩინეთ ჩვენი შერჩეული ტურები ამ რეგიონში'
+    toursDesc: lang === 'ka' ? 'აღმოაწინეთ ჩვენი შერჩეული ტურები ამ რეგიონში'
       : lang === 'en' ? 'Discover our handpicked tours in this region'
       : lang === 'ru' ? 'Откройте для себя наши отобранные туры в этом регионе'
-      : lang === 'uk' ? 'Відкрийте для себе наші відібрані тури в цьому регіоні'
-      : lang === 'ar' ? 'اكتشف جولاتنا المختارة في هذا الإقليم'
       : 'גלה את הסיורים הנבחרים שלנו באזור זה',
     noTours: lang === 'ka' ? 'ამ რეგიონში ჯერ არ არის ტურები. მალე დაემატება!'
       : lang === 'en' ? 'No tours in this region yet. Coming soon!'
       : lang === 'ru' ? 'В этом регионе пока нет туров. Скоро!'
-      : lang === 'uk' ? 'У цьому регіоні ще нема турів. Скоро!'
-      : lang === 'ar' ? 'لا توجد جولات في هذا الإقليم حتى الآن. قريباً!'
       : 'אין עדיין סיורים באזור זה. בקרוב!',
     allTours: lang === 'ka' ? 'ყველა ტურის ნახვა'
       : lang === 'en' ? 'View all tours'
       : lang === 'ru' ? 'Посмотреть все туры'
-      : lang === 'uk' ? 'Переглянути всі тури'
-      : lang === 'ar' ? 'عرض جميع الجولات'
       : 'צפה בכל הסיורים',
     relatedRegions: lang === 'ka' ? 'მსგავსი რეგიონები'
       : lang === 'en' ? 'Explore Related Regions'
       : lang === 'ru' ? 'Исследуйте схожие регионы'
-      : lang === 'uk' ? 'Дослідіть схожі регіони'
-      : lang === 'ar' ? 'استكشف المناطق ذات الصلة'
       : 'גלה אזורים קשורים',
     customTour: lang === 'ka' ? `ინდივიდუალური ტური ${regionTr.name}ში`
       : lang === 'en' ? `Book Custom Tour in ${regionTr.name}`
       : lang === 'ru' ? `Заказать индивидуальный тур в ${regionTr.name}`
-      : lang === 'uk' ? `Замовити індивідуальний тур в ${regionTr.name}`
-      : lang === 'ar' ? `حجز جولة مخصصة في ${regionTr.name}`
       : `הזמן סיור מותאם אישית ב${regionTr.name}`,
     customTourDesc: lang === 'ka' ? 'ჩვენ შეგვიძლია დაგიგეგმოთ ინდივიდუალური მარშრუტი თქვენი სურვილების მიხედვით'
       : lang === 'en' ? 'We can plan a custom route according to your preferences'
       : lang === 'ru' ? 'Мы можем спланировать индивидуальный маршрут по вашим пожеланиям'
-      : lang === 'uk' ? 'Ми можемо спланувати індивідуальний маршрут за вашими побажаннями'
-      : lang === 'ar' ? 'يمكننا تخطيط مسار مخصص حسب تفضيلاتك'
       : 'נוכל לתכנן מסלול מותאם אישית לפי ההעדפות שלך',
     contactUs: lang === 'ka' ? 'დაგვიკავშირდით'
       : lang === 'en' ? 'Contact Us'
       : lang === 'ru' ? 'Свяжитесь с нами'
-      : lang === 'uk' ? 'Зв\'яжіться з нами'
-      : lang === 'ar' ? 'اتصل بنا'
       : 'צור קשר',
     quickInfo: lang === 'ka' ? 'სწრაფი ინფო'
       : lang === 'en' ? 'Quick Info'
       : lang === 'ru' ? 'Краткая информация'
-      : lang === 'uk' ? 'Швидка інформація'
-      : lang === 'ar' ? 'معلومات سريعة'
       : 'מידע מהיר',
     availableTours: lang === 'ka' ? 'ხელმისაწვდომი ტურები'
       : lang === 'en' ? 'Available Tours'
       : lang === 'ru' ? 'Доступные туры'
-      : lang === 'uk' ? 'Доступні тури'
-      : lang === 'ar' ? 'الجولات المتاحة'
       : 'סיורים זמינים',
     attractionsCount: lang === 'ka' ? 'ღირსშესანიშნაობები'
       : lang === 'en' ? 'Attractions'
       : lang === 'ru' ? 'Достопримечательности'
-      : lang === 'uk' ? 'Пам\'ятки'
-      : lang === 'ar' ? 'معالم الجذب'
       : 'אתרים',
     allCategories: lang === 'ka' ? 'ყველა კატეგორია'
       : lang === 'en' ? 'All Categories'
       : lang === 'ru' ? 'Все категории'
-      : lang === 'uk' ? 'Всі категорії'
-      : lang === 'ar' ? 'جميع الفئات'
       : 'כל הקטגוריות',
     breadcrumbRegions: lang === 'ka' ? 'რეგიონები'
       : lang === 'en' ? 'Regions'
       : lang === 'ru' ? 'Регионы'
-      : lang === 'uk' ? 'Регіони'
-      : lang === 'ar' ? 'المناطق'
       : 'אזורים',
   };
 
   const categoryLabels: Record<string, Record<string, string>> = {
-    city: { ka: 'ქალაქური', en: 'City', ru: 'Городской', uk: 'Міський', ar: 'مدينة', he: 'עירוני' },
-    mountain: { ka: 'მთის', en: 'Mountain', ru: 'Горный', uk: 'Гірський', ar: 'جبل', he: 'הרים' },
-    wine: { ka: 'ღვინის', en: 'Wine', ru: 'Винный', uk: 'Винний', ar: 'نبيذ', he: 'יין' },
-    adventure: { ka: 'სათავგადასავლო', en: 'Adventure', ru: 'Приключение', uk: 'Пригода', ar: 'مغامرة', he: 'הרפתקה' },
-    cultural: { ka: 'კულტურული', en: 'Cultural', ru: 'Культурный', uk: 'Культурний', ar: 'ثقافي', he: 'תרבותי' },
-    food: { ka: 'გასტრონომიული', en: 'Food', ru: 'Гастро', uk: 'Гастро', ar: 'طعام', he: 'אוכל' },
-    transfer: { ka: 'ტრანსფერი', en: 'Transfer', ru: 'Трансфер', uk: 'Трансфер', ar: 'نقل', he: 'הסעה' },
-    custom: { ka: 'ინდივიდუალური', en: 'Custom', ru: 'Индивид.', uk: 'Індивід.', ar: 'مخصص', he: 'מותאם' },
+    city: { ka: 'ქალაქური', en: 'City', ru: 'Городской', he: 'עירוני' },
+    mountain: { ka: 'მთის', en: 'Mountain', ru: 'Горный', he: 'הרים' },
+    wine: { ka: 'ღვინის', en: 'Wine', ru: 'Винный', he: 'יין' },
+    adventure: { ka: 'სათავგადასავლო', en: 'Adventure', ru: 'Приключение', he: 'הרפתקה' },
+    cultural: { ka: 'კულტურული', en: 'Cultural', ru: 'Культурный', he: 'תרבותי' },
+    food: { ka: 'გასტრონომიული', en: 'Food', ru: 'Гастро', he: 'אוכל' },
+    transfer: { ka: 'ტრანსფერი', en: 'Transfer', ru: 'Трансфер', he: 'הסעה' },
+    custom: { ka: 'ინდივიდუალური', en: 'Custom', ru: 'Индивид.', he: 'מותאם' },
   };
 
   const getCategoryLabel = (catId: string) => {
@@ -449,8 +415,6 @@ export function RegionDetailClient({
                           {lang === 'ka' ? 'გაიგე მეტი'
                             : lang === 'en' ? 'Explore'
                             : lang === 'ru' ? 'Исследовать'
-                            : lang === 'uk' ? 'Дослідити'
-                            : lang === 'ar' ? 'استكشف'
                             : 'חקור'}
                           <ArrowRight size={12} className={isRTL ? 'rotate-180' : ''} />
                         </span>
