@@ -10,9 +10,9 @@ import React from 'react';
 // ─── Constants ───────────────────────────────────────────────
 
 export const SITE_NAME = 'Georgian Treasure';
-export const SITE_URL = 'https://georgiantreasure.com';
+export const SITE_URL = 'https://georgiantreasure.ge';
 export const DEFAULT_LOCALE = 'en';
-export const SUPPORTED_LOCALES = ['ka', 'en', 'ru'] as const;
+export const SUPPORTED_LOCALES = ['en', 'ka', 'ru', 'he'] as const;
 
 export const ORGANIZATION_DATA = {
   '@context': 'https://schema.org',
@@ -31,7 +31,7 @@ export const ORGANIZATION_DATA = {
   ],
   contactPoint: {
     '@type': 'ContactPoint',
-    telephone: '+995-599-14-76-91',
+    telephone: '+995-599-03-33-19',
     contactType: 'Customer Service',
     availableLanguage: ['English', 'Russian', 'Georgian'],
   },
@@ -52,7 +52,7 @@ export const LOCAL_BUSINESS_DATA = {
   image: `${SITE_URL}/images/office.jpg`,
   '@id': `${SITE_URL}/#travelagency`,
   url: SITE_URL,
-  telephone: '+995-599-14-76-91',
+  telephone: '+995-599-03-33-19',
   email: 'georgiantreasure1@gmail.com',
   priceRange: '$$',
   address: {

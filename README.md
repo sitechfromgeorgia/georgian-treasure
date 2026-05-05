@@ -56,7 +56,7 @@ Premium tour service in Batumi, Georgia — ბათუმის ტურე�
 | Project | `georgian-treasure` (CF Dashboard) |
 | Branch | `main` (auto-deploy on push) |
 | Build command | `npm run build` |
-| Output dir | `.next` |
+| Output dir | `out/` (static export) |
 | Domain | georgiantreasure.ge |
 | DNS | CNAME → `georgian-treasure.pages.dev` (proxied) |
 
@@ -94,7 +94,7 @@ npm run start
 ## 📝 Notes
 
 - Font: **Noto Sans Georgian** (Google Fonts) — loaded via `next/font/google`
-- WhatsApp booking: +995 599 033 319
+- WhatsApp booking: +995 599 03 33 19
 - Dark mode supported via ThemeContext
 - RTL support for Arabic/Hebrew
 

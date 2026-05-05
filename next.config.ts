@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 60,
     unoptimized: true, // Required for static export
   },
-  trailingSlash: false,
+  trailingSlash: true,
 };
 
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');

@@ -43,10 +43,8 @@ next-env.d.ts
 # GitNexus
 .gitnexus/
 
-# Agent tooling
-AGENTS.md
-CLAUDE.md
-.claude/
+# Agent tooling (versioned for team collaboration)
+# CLAUDE.md and .claude/ are intentionally committed
 
 # Archived/old files
 /old/
