@@ -1,6 +1,7 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { locales } from '@/lib/i18n';
+import { ChatbotWrapper } from '@/components/ui/ChatbotWrapper';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ lang: locale }));
@@ -23,6 +24,7 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider locale={lang} messages={messages}>
       {children}
+      <ChatbotWrapper />
     </NextIntlClientProvider>
   );
 }

@@ -3,7 +3,6 @@ import { Inter, Noto_Sans_Hebrew, Noto_Sans_Georgian } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { ThemeProvider } from '@/context/ThemeContext';
-import { ChatbotWrapper } from '@/components/ui/ChatbotWrapper';
 import { SiteSchemas } from '@/components/seo/StructuredData';
 import { SITE_URL } from '@/lib/seo';
 
@@ -140,7 +139,6 @@ export default function RootLayout({
           <ThemeProvider>
             <SiteSchemas />
             {children}
-            <ChatbotWrapper />
           </ThemeProvider>
         </LanguageProvider>
       </body>
