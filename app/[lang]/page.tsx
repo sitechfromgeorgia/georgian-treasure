@@ -1,5 +1,11 @@
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
 import HomePageClient from '@/components/HomePageClient';
+import { locales } from '@/lib/i18n';
+
+// Generate static params for all locales
+export function generateStaticParams() {
+  return locales.map((lang) => ({ lang }));
+}
 
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -7,13 +13,10 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
   // Enable static rendering for next-intl
   setRequestLocale(lang);
 
-  const t = await getTranslations({ locale: lang });
-
   return (
     <HomePageClient
       locale={lang}
       translations={{
-        aboutTitle: t('about.title'),
         welcome: 'Welcome',
       }}
     />
