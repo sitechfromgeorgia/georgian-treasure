@@ -234,5 +234,139 @@
       "subtitle": "Contact us today and let's plan your best trip to Georgia",
       "button": "Contact Us"
     }
+  },
+  "reviews": {
+    "hero": {
+      "title": "Reviews",
+      "subtitle": "Meet our satisfied travelers and their stories"
+    },
+    "stats": {
+      "rating": "Average Rating",
+      "reviews": "Reviews",
+      "recommend": "Recommend to Friends"
+    },
+    "review1": {
+      "text": "Undoubtedly the best tour I've ever had! Giorgi planned everything so perfectly that every detail was ideal. Mountains, wine, Georgian hospitality — everything exceeded high expectations.",
+      "tour": "Classic Georgia - 7 Days"
+    },
+    "review2": {
+      "text": "As a German, I have high standards. Georgian Treasure exceeded all expectations. Professionalism, punctuality, and genuine love for Georgia — that's what sets them apart.",
+      "tour": "Mountain Adjara Trekking"
+    },
+    "review3": {
+      "text": "Traveling with children is always a challenge. But everything was planned so well that even the kids were delighted. Special thanks to Mariam for her patience!",
+      "tour": "Family Tour in Batumi"
+    },
+    "review4": {
+      "text": "Who knew Georgia was such a wine country? The Kakheti tour changed my life. Now I return every year and discover new surprises each time.",
+      "tour": "Kakheti Wine Tour"
+    },
+    "review5": {
+      "text": "Svaneti is simply unreal — it's another world. Ushguli's ancient towers, alpine lakes, mountain air. This was a journey I'll remember forever.",
+      "tour": "Svaneti 4-Day Tour"
+    },
+    "review6": {
+      "text": "Canyons, caves, waterfalls — Western Georgia is a wonder of nature. The guides' knowledge and enthusiasm made everything even more special.",
+      "tour": "Martvili Canyon & Prometheus Cave"
+    },
+    "cta": {
+      "title": "Want to share your experience too?",
+      "subtitle": "Your review will help other travelers make the right choice",
+      "button": "Contact us on WhatsApp"
+    }
+  },
+  "customTour": {
+    "hero": {
+      "badge": "Personalized Experience",
+      "title": "Create Your Dream Tour",
+      "subtitle": "Tell us your preferences and we'll create a personalized itinerary through Georgia's best places"
+    },
+    "destinations": {
+      "title": "Choose Destinations",
+      "subtitle": "Select all the places you want to visit",
+      "list": {
+        "tbilisi": "Tbilisi",
+        "batumi": "Batumi",
+        "kazbegi": "Kazbegi",
+        "kakheti": "Kakheti",
+        "svaneti": "Svaneti",
+        "signagi": "Signagi",
+        "borjomi": "Borjomi",
+        "kutaisi": "Kutaisi",
+        "mestia": "Mestia",
+        "ushguli": "Ushguli",
+        "martvili": "Martvili",
+        "vardzia": "Vardzia"
+      }
+    },
+    "dates": {
+      "title": "Travel Dates & Group",
+      "subtitle": "When and with whom are you traveling?",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "groupSize": "Group Size",
+      "selectGroupSize": "Select group size",
+      "solo": "Solo Traveler",
+      "couple": "Couple",
+      "smallGroup": "Small Group (3-5)",
+      "mediumGroup": "Medium Group (6-10)",
+      "largeGroup": "Large Group (10+)"
+    },
+    "budget": {
+      "title": "Budget Range",
+      "budget": "Budget",
+      "budgetDesc": "Under $100/day",
+      "standard": "Standard",
+      "standardDesc": "$100-200/day",
+      "luxury": "Luxury",
+      "luxuryDesc": "$200+/day"
+    },
+    "interests": {
+      "title": "Your Interests",
+      "subtitle": "What activities excite you?",
+      "list": {
+        "wine": "Wine Tasting",
+        "hiking": "Hiking & Trekking",
+        "culture": "Culture & History",
+        "food": "Food & Cuisine",
+        "adventure": "Adventure Sports",
+        "photography": "Photography",
+        "relaxation": "Relaxation & Spa",
+        "nightlife": "Nightlife"
+      }
+    },
+    "contact": {
+      "title": "Your Details",
+      "subtitle": "How can we reach you?",
+      "fullName": "Full Name *",
+      "namePlaceholder": "Your name",
+      "email": "Email *",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone / WhatsApp",
+      "phonePlaceholder": "+995 599 033 319",
+      "notes": "Special Requests / Notes",
+      "notesPlaceholder": "Any specific requests, dietary needs, accessibility requirements..."
+    },
+    "submit": "Send via WhatsApp",
+    "submitNote": "We'll contact you within 24 hours with a personalized itinerary",
+    "success": {
+      "title": "Request Submitted!",
+      "message": "Thank you, {name}! We received your request and will contact you at {email} within 24 hours.",
+      "browseTours": "Browse Tours",
+      "chatWhatsApp": "Chat on WhatsApp"
+    },
+    "popularRoutes": {
+      "title": "Popular Routes",
+      "subtitle": "Inspiration for your journey"
+    },
+    "testimonials": {
+      "title": "What Our Travelers Say"
+    },
+    "cta": {
+      "title": "Prefer to chat directly?",
+      "subtitle": "Our team is available on WhatsApp to help you plan your perfect Georgian adventure in real-time.",
+      "chatButton": "Chat on WhatsApp"
+    },
+    "footer": "All rights reserved."
   }
 }
