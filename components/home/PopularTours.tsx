@@ -1,10 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { tours } from '@/data/content';
 import { formatPrice, cn } from '@/lib/utils';
-import { Clock, MapPin, Star, TrendingUp } from 'lucide-react';
+import { Clock, MapPin, Star, TrendingUp, ArrowRight } from 'lucide-react';
 
 export function PopularTours() {
   const { t, language, isRTL } = useLanguage();
@@ -27,6 +28,12 @@ export function PopularTours() {
       en: 'View All Tours',
       ru: 'Все туры',
       he: 'צפה בכל הסיורים'
+    },
+    viewDetails: {
+      ka: 'დეტალები',
+      en: 'View Details',
+      ru: 'Подробнее',
+      he: 'פרטים'
     }
   };
 
@@ -67,64 +74,70 @@ export function PopularTours() {
                 viewport={{ once: true }}
                 className="group relative glass-dark rounded-[40px] overflow-hidden border border-white/5 hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 shadow-2xl"
               >
-                <div className="relative h-80 overflow-hidden">
-                  <img 
-                    src={tour.images[0] || '/tours/hero-batumi.jpg'} 
-                    alt={tr?.title || tour.id}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                  />
-                  <div className="absolute top-6 right-6 glass px-4 py-1.5 rounded-full text-white text-sm font-bold flex items-center gap-1.5 shadow-lg">
-                    <Star size={14} className="text-accent fill-accent" />
-                    <span>4.9</span>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
-                     <div className={cn("flex items-center gap-2 text-white font-medium", isRTL && "flex-row-reverse")}>
-                        <Clock size={18} className="text-accent" />
-                        <span>{tour.duration}</span>
-                     </div>
-                  </div>
-                </div>
-
-                <div className="p-8">
-                  <h4 className={cn(
-                    "text-2xl font-black text-white mb-4 group-hover:text-accent transition-colors tracking-tight",
-                    isRTL ? "font-arabic text-right" : "font-inter"
-                  )}>
-                    {tr?.title || tour.id}
-                  </h4>
-                  <p className={cn(
-                    "text-white/50 text-sm mb-8 leading-relaxed line-clamp-3",
-                    isRTL && "text-right"
-                  )}>
-                    {tr?.shortDescription || tr?.description || ''}
-                  </p>
-
-                  <div className={cn(
-                    "flex items-center justify-between pt-8 border-t border-white/5",
-                    isRTL && "flex-row-reverse"
-                  )}>
-                    <div className={cn(isRTL && "text-right")}>
-                      <p className="text-white/30 text-[10px] uppercase tracking-[0.2em] mb-1">
-                        {labels.startingFrom[language]}
-                      </p>
-                      <p className="text-3xl font-black text-accent tracking-tighter">
-                        {language === 'ka' ? formatPrice(tour.priceGel, 'GEL') : formatPrice(tour.priceUsd, 'USD')}
-                      </p>
+                <Link href={`/${language}/tours/${tour.slug}`} className="block">
+                  <div className="relative h-80 overflow-hidden">
+                    <img 
+                      src={tour.images[0] || '/tours/hero-batumi.jpg'} 
+                      alt={tr?.title || tour.id}
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    />
+                    <div className="absolute top-6 right-6 glass px-4 py-1.5 rounded-full text-white text-sm font-bold flex items-center gap-1.5 shadow-lg">
+                      <Star size={14} className="text-accent fill-accent" />
+                      <span>4.9</span>
                     </div>
-                    <button className="bg-white/5 hover:bg-accent hover:text-primary text-white p-4 rounded-2xl transition-all duration-500 shadow-lg group-hover:rotate-12">
-                      <MapPin size={24} />
-                    </button>
+                    <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                       <div className={cn("flex items-center gap-2 text-white font-medium", isRTL && "flex-row-reverse")}>
+                          <Clock size={18} className="text-accent" />
+                          <span>{tour.duration}</span>
+                       </div>
+                    </div>
                   </div>
-                </div>
+
+                  <div className="p-8">
+                    <h4 className={cn(
+                      "text-2xl font-black text-white mb-4 group-hover:text-accent transition-colors tracking-tight",
+                      isRTL ? "font-arabic text-right" : "font-inter"
+                    )}>
+                      {tr?.title || tour.id}
+                    </h4>
+                    <p className={cn(
+                      "text-white/50 text-sm mb-8 leading-relaxed line-clamp-3",
+                      isRTL && "text-right"
+                    )}>
+                      {tr?.shortDescription || tr?.description || ''}
+                    </p>
+
+                    <div className={cn(
+                      "flex items-center justify-between pt-8 border-t border-white/5",
+                      isRTL && "flex-row-reverse"
+                    )}>
+                      <div className={cn(isRTL && "text-right")}>
+                        <p className="text-white/30 text-[10px] uppercase tracking-[0.2em] mb-1">
+                          {labels.startingFrom[language]}
+                        </p>
+                        <p className="text-3xl font-black text-accent tracking-tighter">
+                          {language === 'ka' ? formatPrice(tour.priceGel, 'GEL') : formatPrice(tour.priceUsd, 'USD')}
+                        </p>
+                      </div>
+                      <div className="bg-white/5 group-hover:bg-accent group-hover:text-primary text-white p-4 rounded-2xl transition-all duration-500 shadow-lg group-hover:rotate-12">
+                        <ArrowRight size={24} />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
               </motion.div>
             );
           })}
         </div>
         
         <div className="mt-20 text-center">
-          <button className="text-white border border-white/10 px-12 py-4 rounded-full font-bold hover:bg-white hover:text-primary hover:border-white transition-all duration-300 shadow-xl active:scale-95">
+          <Link 
+            href={`/${language}/tours`}
+            className="inline-flex items-center gap-2 text-white border border-white/10 px-12 py-4 rounded-full font-bold hover:bg-white hover:text-primary hover:border-white transition-all duration-300 shadow-xl active:scale-95"
+          >
             {labels.viewAll[language]}
-          </button>
+            <ArrowRight size={20} />
+          </Link>
         </div>
       </div>
     </section>
