@@ -19,9 +19,9 @@ export default function AboutPage() {
 
   const stats = [
     { icon: Compass, value: '500+', label: t('stats.tours') },
-    { icon: Users, value: '10K+', label: t('stats.travelers') },
-    { icon: Star, value: '4.9', label: t('stats.rating') },
-    { icon: Globe, value: '50+', label: t('stats.destinations') }
+    { icon: Users, value: '10K+', label: t('stats.tourists') },
+    { icon: Star, value: '4.9', label: t('stats.languages') },
+    { icon: Globe, value: '50+', label: t('stats.years') }
   ];
 
   const values = [
