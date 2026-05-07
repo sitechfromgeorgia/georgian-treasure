@@ -246,24 +246,24 @@ export default function AboutPage() {
               animate={{ opacity: 1, x: 0 }}
             >
               <h2 className="text-4xl font-black text-white mb-8">
-                {t('why.title')}
+                {t('whyChooseUs.title')}
               </h2>
               <div className="space-y-6">
-                {[1, 2, 3, 4].map((num) => (
-                  <div key={num} className="flex gap-4">
-                    <div className="w-8 h-8 bg-[#D4AF37] rounded-lg flex items-center justify-center flex-shrink-0">
-                      <span className="text-[#001F3F] font-bold">{num}</span>
+                {[1, 2, 3, 4].map((num, index) => {
+                  const keys = ['localExperts', 'personalized', 'quality', 'support'];
+                  return (
+                    <div key={num} className="flex gap-4">
+                      <div className="w-8 h-8 bg-[#D4AF37] rounded-lg flex items-center justify-center flex-shrink-0">
+                        <span className="text-[#001F3F] font-bold">{num}</span>
+                      </div>
+                      <div>
+                        <h3 className="text-white font-bold mb-1">
+                          {t(`whyChooseUs.points.${keys[index]}`)}
+                        </h3>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-white font-bold mb-1">
-                        {t(`why.points.${num}.title`)}
-                      </h3>
-                      <p className="text-white/60 text-sm">
-                        {t(`why.points.${num}.desc`)}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </motion.div>
           </div>
