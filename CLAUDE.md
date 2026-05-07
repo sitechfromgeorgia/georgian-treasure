@@ -37,7 +37,7 @@ Next.js 15 static-export PWA for a premium tour service in Batumi, Georgia. Depl
 <!-- gitnexus:start -->
 # GitNexus — Code Intelligence
 
-This project is indexed by GitNexus as **georgian-treasure** (466 symbols, 758 relationships, 10 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
+This project is indexed by GitNexus as **georgian-treasure** (483 symbols, 776 relationships, 10 execution flows). Use the GitNexus MCP tools to understand code, assess impact, and navigate safely.
 
 > If any GitNexus tool warns the index is stale, run `npx gitnexus analyze` in terminal first.
 

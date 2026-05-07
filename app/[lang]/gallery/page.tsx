@@ -126,7 +126,7 @@ const galleryImages = [
       ka: 'ბორჯომის პარკი',
       en: 'Borjomi Park',
       ru: 'Парк Боржоми',
-      he: 'פארק בורג'omi',
+      he: "פארק בורג'ומי",
     },
   },
   {
