@@ -17,7 +17,7 @@ import {
 import Link from 'next/link';
 
 export default function ContactPage() {
-  const t = useTranslations('contact');
+  const t = useTranslations('contactPage');
   const locale = useLocale();
   const [formData, setFormData] = useState({
     name: '',

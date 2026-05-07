@@ -15,7 +15,7 @@ import {
 import Image from 'next/image';
 
 export default function AboutPage() {
-  const t = useTranslations('about');
+  const t = useTranslations('aboutPage');
 
   const stats = [
     { icon: Compass, value: '500+', label: t('stats.tours') },
