@@ -64,6 +64,26 @@ export function TourCard({ tour, index = 0 }: TourCardProps) {
   const categoryLabel = categoryLabels[tour.category]?.[language] || tour.category;
   const regionLabel = regionLabels[tour.region]?.[language] || tour.region;
 
+  // Format duration based on language
+  const formatDuration = (hours: number, lang: string): string => {
+    const days = Math.floor(hours / 24);
+    const remainingHours = hours % 24;
+    
+    if (days > 0) {
+      if (lang === 'ka') return `${days} დღე${remainingHours > 0 ? ` / ${remainingHours} საათი` : ''}`;
+      if (lang === 'ru') return `${days} дн${remainingHours > 0 ? ` / ${remainingHours} ч` : ''}`;
+      if (lang === 'he') return `${days} ימים${remainingHours > 0 ? ` / ${remainingHours} שעות` : ''}`;
+      return `${days} day${days > 1 ? 's' : ''}${remainingHours > 0 ? ` / ${remainingHours}h` : ''}`;
+    }
+    
+    if (lang === 'ka') return `${hours} საათი`;
+    if (lang === 'ru') return `${hours} ч`;
+    if (lang === 'he') return `${hours} שעות`;
+    return `${hours}h`;
+  };
+
+  const formattedDuration = formatDuration(tour.durationHours, language);
+
   // View details label
   const viewDetailsLabel =
     language === 'ka' ? 'დეტალების ნახვა'
@@ -144,7 +164,7 @@ export function TourCard({ tour, index = 0 }: TourCardProps) {
         <div className="flex flex-wrap items-center gap-3 mb-4 text-xs text-white/50">
           <div className="flex items-center gap-1">
             <Clock size={13} className="text-[#D4AF37]" />
-            <span>{tour.duration}</span>
+            <span>{formattedDuration}</span>
           </div>
           <div className="flex items-center gap-1">
             <Users size={13} className="text-[#D4AF37]" />

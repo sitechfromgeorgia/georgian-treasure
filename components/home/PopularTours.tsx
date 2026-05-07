@@ -10,6 +10,22 @@ import { Clock, MapPin, Star, TrendingUp, ArrowRight } from 'lucide-react';
 export function PopularTours() {
   const { t, language, isRTL } = useLanguage();
 
+  // Format duration based on language
+  const formatDuration = (durationStr: string, lang: string): string => {
+    // Extract hours from duration string (e.g., "4-5 საათი" or "5 hours")
+    const hoursMatch = durationStr.match(/(\d+)(?:-(\d+))?/);
+    if (!hoursMatch) return durationStr;
+    
+    const minHours = parseInt(hoursMatch[1]);
+    const maxHours = hoursMatch[2] ? parseInt(hoursMatch[2]) : minHours;
+    const avgHours = Math.round((minHours + maxHours) / 2);
+    
+    if (lang === 'ka') return `${minHours}${maxHours !== minHours ? `-${maxHours}` : ''} საათი`;
+    if (lang === 'ru') return `${minHours}${maxHours !== minHours ? `-${maxHours}` : ''} ч`;
+    if (lang === 'he') return `${minHours}${maxHours !== minHours ? `-${maxHours}` : ''} שעות`;
+    return `${minHours}${maxHours !== minHours ? `-${maxHours}` : ''}h`;
+  };
+
   const labels = {
     explore: {
       ka: 'აღმოაჩინე სილამაზე',
@@ -88,7 +104,7 @@ export function PopularTours() {
                     <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
                        <div className={cn("flex items-center gap-2 text-white font-medium", isRTL && "flex-row-reverse")}>
                           <Clock size={18} className="text-accent" />
-                          <span>{tour.duration}</span>
+                          <span>{formatDuration(tour.duration, language)}</span>
                        </div>
                     </div>
                   </div>
