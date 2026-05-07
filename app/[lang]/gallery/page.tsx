@@ -506,7 +506,7 @@ export default function GalleryPage() {
               {/* Image info */}
               <div className="mt-4 text-center">
                 <h3 className="text-white text-xl font-semibold">
-                  {filteredImages[selectedImage].title[locale as keyof typeof filteredImages[0].title] || 
+                  {(filteredImages[selectedImage].title as Record<string, string>)[locale] || 
                    filteredImages[selectedImage].title.en}
                 </h3>
                 <p className="text-white/60 mt-1">
