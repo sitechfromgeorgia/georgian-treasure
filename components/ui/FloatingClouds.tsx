@@ -31,18 +31,18 @@ export function FloatingClouds() {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Initialize clouds
-    const cloudCount = 5;
+    // Initialize clouds - smaller, more subtle
+    const cloudCount = 3;
     cloudsRef.current = [];
 
     for (let i = 0; i < cloudCount; i++) {
       cloudsRef.current.push({
         x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height * 0.6 + 50,
-        width: 150 + Math.random() * 200,
-        height: 40 + Math.random() * 30,
-        speed: 0.2 + Math.random() * 0.3,
-        opacity: 0.1 + Math.random() * 0.15,
+        y: Math.random() * canvas.height * 0.4 + 100,
+        width: 80 + Math.random() * 120,
+        height: 25 + Math.random() * 20,
+        speed: 0.1 + Math.random() * 0.15,
+        opacity: 0.05 + Math.random() * 0.08,
       });
     }
 
@@ -97,7 +97,7 @@ export function FloatingClouds() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.9 }}
+      style={{ opacity: 0.5 }}
     />
   );
 }

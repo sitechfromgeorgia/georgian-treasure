@@ -12,10 +12,10 @@ const routeBackgrounds: Record<string, 'dust' | 'sunset' | 'clouds' | 'none'> = 
   '/regions': 'clouds',    // Regions - floating clouds
   '/custom-tour': 'sunset', // Custom tour - warm sunset
   '/about': 'sunset',      // About - warm sunset
-  '/contact': 'clouds',    // Contact - calm clouds
+  '/contact': 'sunset',    // Contact - warm sunset (calmer)
   '/reviews': 'sunset',    // Reviews - warm sunset
   '/gallery': 'dust',      // Gallery - mountain dust
-  '/blog': 'clouds',       // Blog - calm clouds
+  '/blog': 'sunset',       // Blog - sunset (better for reading)
 };
 
 export function BackgroundSwitcher() {
