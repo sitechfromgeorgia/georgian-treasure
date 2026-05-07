@@ -86,6 +86,45 @@
     "address": "Address",
     "addressValue": "Batumi, Adjara, Georgia"
   },
+  "contactPage": {
+    "hero": {
+      "title": "Contact Us",
+      "subtitle": "Get in touch and book your next adventure with us"
+    },
+    "form": {
+      "title": "Send us a Message",
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "phone": "Phone",
+      "phonePlaceholder": "+995 599 033 319",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your tour request or question...",
+      "submit": "Send via WhatsApp",
+      "success": "Message Sent!",
+      "successDesc": "WhatsApp will open with your message"
+    },
+    "contact": {
+      "title": "Contact Information",
+      "whatsapp": "WhatsApp",
+      "phone": "Phone",
+      "address": "Address",
+      "addressValue": "Batumi, Adjara, Georgia",
+      "email": "Email",
+      "hours": "Working Hours",
+      "hoursValue": "Monday - Sunday: 09:00 - 21:00"
+    },
+    "social": {
+      "title": "Follow Us"
+    },
+    "map": {
+      "title": "Our Location"
+    },
+    "whatsapp": {
+      "newMessage": "Hello! I'm interested in a tour:"
+    }
+  },
   "footer": {
     "allRights": "All rights reserved.",
     "chat": "Chat with Giorgi"
@@ -94,5 +133,106 @@
     "notFound": "Page Not Found",
     "notFoundDesc": "Sorry, the page you requested does not exist.",
     "backHome": "Back to Home"
+  },
+  "gallery": {
+    "hero": {
+      "title": "Photo Gallery",
+      "subtitle": "Explore the beauty of Georgia through our lens. Mountains, sea, cities, and culture — all in one place."
+    },
+    "categories": {
+      "all": "All",
+      "mountains": "Mountains",
+      "sea": "Sea",
+      "cities": "Cities",
+      "culture": "Culture"
+    },
+    "noImages": "No images found in this category."
+  },
+  "aboutPage": {
+    "hero": {
+      "title": "About Us",
+      "subtitle": "Meet your guides to discovering Georgia's hidden treasures"
+    },
+    "stats": {
+      "tourists": "Happy Tourists",
+      "tours": "Unique Tours",
+      "languages": "Languages",
+      "years": "Years Experience"
+    },
+    "story": {
+      "title": "Our Story",
+      "since": "Since",
+      "imageAlt": "Batumi view",
+      "paragraph1": "Georgian Treasure was founded in 2019 when a group of local enthusiasts decided to share Georgia's unique beauty with the world. Our mission was to create authentic, personalized tours that show the real face of Adjara.",
+      "paragraph2": "Today, we are one of the leading tour companies in Batumi, serving thousands of tourists annually. Our team consists of professional guides who speak 6 languages and know every secret of the region.",
+      "paragraph3": "Our goal is to create unforgettable memories for every traveler who wants to discover Georgia's true treasure."
+    },
+    "mission": {
+      "title": "Our Mission & Values",
+      "subtitle": "The core principles that guide our work every day"
+    },
+    "values": {
+      "passion": {
+        "title": "Passion",
+        "description": "We love Georgia and take pride in sharing it with our guests"
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "We strive for the highest quality of service on every tour"
+      },
+      "safety": {
+        "title": "Safety",
+        "description": "Our guests' safety is always our top priority"
+      },
+      "authenticity": {
+        "title": "Authenticity",
+        "description": "We show the real Georgia as locals see it"
+      }
+    },
+    "team": {
+      "title": "Meet Our Team",
+      "subtitle": "Professional guides who will create your best travel experience",
+      "members": {
+        "giorgi": {
+          "name": "Giorgi Tserodze",
+          "role": "Founder & Guide",
+          "description": "10+ years in tourism, specializing in mountainous Adjara"
+        },
+        "nino": {
+          "name": "Nino Beridze",
+          "role": "Senior Guide",
+          "description": "Master's in History, speaks 5 languages"
+        },
+        "david": {
+          "name": "David Mamulashvili",
+          "role": "Tour Manager",
+          "description": "Adventure tours and trekking specialist"
+        },
+        "mariam": {
+          "name": "Mariam Kavtaradze",
+          "role": "Customer Relations Manager",
+          "description": "Ensures comfort for every guest"
+        }
+      }
+    },
+    "whyChooseUs": {
+      "title": "Why Choose Us?",
+      "subtitle": "We offer a unique experience that sets us apart from others",
+      "imageAlt": "Batumi night view",
+      "points": {
+        "localExperts": "Local Expert Knowledge",
+        "personalized": "Personalized Service",
+        "quality": "Guaranteed Quality",
+        "support": "24/7 Support",
+        "price": "Best Price Guarantee"
+      },
+      "rating": "Average Rating",
+      "guarantee": "Satisfaction Guarantee"
+    },
+    "cta": {
+      "title": "Ready to Start Your Adventure?",
+      "subtitle": "Contact us today and let's plan your best trip to Georgia",
+      "button": "Contact Us"
+    }
   }
 }
