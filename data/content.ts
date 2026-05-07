@@ -303,11 +303,14 @@ export const translations: Record<Language, any> = {
       watchVideo: 'ვიდეოს ნახვა'
     },
     nav: {
+      home: 'მთავარი',
       tours: 'ტურები',
       about: 'ჩვენს შესახებ',
       booking: 'დაჯავშნა',
       contact: 'კონტაქტი',
       regions: 'რეგიონები',
+      gallery: 'გალერეა',
+      reviews: 'შეფასებები',
       blog: 'ბლოგი',
       customTour: 'ინდივიდუალური ტური'
     },
@@ -391,11 +394,14 @@ export const translations: Record<Language, any> = {
       watchVideo: 'Watch Video'
     },
     nav: {
+      home: 'Home',
       tours: 'Tours',
       about: 'About Us',
       booking: 'Booking',
       contact: 'Contact',
       regions: 'Regions',
+      gallery: 'Gallery',
+      reviews: 'Reviews',
       blog: 'Blog',
       customTour: 'Custom Tour'
     },
@@ -479,11 +485,14 @@ export const translations: Record<Language, any> = {
       watchVideo: 'Смотреть видео'
     },
     nav: {
+      home: 'Главная',
       tours: 'Туры',
       about: 'О нас',
       booking: 'Бронирование',
       contact: 'Контакт',
       regions: 'Регионы',
+      gallery: 'Галерея',
+      reviews: 'Отзывы',
       blog: 'Блог',
       customTour: 'Индивидуальный тур'
     },
@@ -567,11 +576,14 @@ export const translations: Record<Language, any> = {
       watchVideo: 'צפה בווידאו'
     },
     nav: {
+      home: 'בית',
       tours: 'סיורים',
       about: 'עלינו',
       booking: 'הזמנה',
       contact: 'צור קשר',
       regions: 'אזורים',
+      gallery: 'גלריה',
+      reviews: 'ביקורות',
       blog: 'בלוג',
       customTour: 'סיור מותאם אישית'
     },

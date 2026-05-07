@@ -17,18 +17,37 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>('en');
   const [isRTL, setIsRTL] = useState(false);
 
+  // Sync with URL locale on mount and when pathname changes
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem('language') as Language;
-      if (saved && languages[saved]) {
-        setLanguageState(saved);
-        setIsRTL(languages[saved].rtl);
-        document.documentElement.dir = languages[saved].rtl ? 'rtl' : 'ltr';
-        document.documentElement.lang = saved;
+    const syncWithUrl = () => {
+      const pathLang = window.location.pathname.split('/')[1];
+      if (pathLang && languages[pathLang as Language]) {
+        const lang = pathLang as Language;
+        setLanguageState(lang);
+        setIsRTL(languages[lang].rtl);
+        document.documentElement.dir = languages[lang].rtl ? 'rtl' : 'ltr';
+        document.documentElement.lang = lang;
+      } else {
+        // Fallback to localStorage or default
+        try {
+          const saved = localStorage.getItem('language') as Language;
+          if (saved && languages[saved]) {
+            setLanguageState(saved);
+            setIsRTL(languages[saved].rtl);
+            document.documentElement.dir = languages[saved].rtl ? 'rtl' : 'ltr';
+            document.documentElement.lang = saved;
+          }
+        } catch {
+          // localStorage unavailable
+        }
       }
-    } catch {
-      // localStorage unavailable (e.g. private browsing)
-    }
+    };
+
+    syncWithUrl();
+
+    // Listen for popstate (back/forward navigation)
+    window.addEventListener('popstate', syncWithUrl);
+    return () => window.removeEventListener('popstate', syncWithUrl);
   }, []);
 
   const setLanguage = (lang: Language) => {
